@@ -26,10 +26,10 @@ Track-Track is a solution to capture your entire music library in one place, reg
 ## Wireframes
 
 ### Main Landing Page
-![landing_page](public/images/landing_page.png)
+![landing_page](./public/images/wireframes/landing_page.png)
 
 ### Add New Song
-![add_new](public/images/add_new.png)
+![add_new](./public/images/wireframes/add_new.png)
 
 ### Display Songs
-![display_page](public/images/display_page.png)
+![display_page](./public/images/wireframes/display_page.png)

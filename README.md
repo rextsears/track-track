@@ -10,6 +10,8 @@ Track-Track is a solution to capture your entire music library in one place, reg
     - As a user, I want the ability to load the application in a web browser.
     - As a user, I want the ability to 'log in' to the app to only see my information.
     - As a user, I want the ability to store music information in a database for the information to be recalled in the future for later use.
+    - As a user, I want the ability to edit or otherwise modify music information that was previously entered.
+    - As a user, I want the ability to delete music information that was previously entered.
     - As a user, I want to be able to store information pertaining to individual songs, at minimum, including song Title, Artist, Album, Streaming Source, and Discovery Source.
     - As a user, I want the ability to mark certain songs as 'Favorites.'
     - As a user, I want the ability to be the only user to see my personal music information and have the information otherwise kept private.
@@ -36,3 +38,4 @@ Track-Track is a solution to capture your entire music library in one place, reg
 ![display_page](./public/images/wireframes/display_page.png)
 
 ## ERD
+![erd](./public/images/wireframes/erd.png)

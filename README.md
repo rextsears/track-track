@@ -19,6 +19,7 @@ Track-Track is a solution to capture your entire music library in one place, reg
 ### Ice Box
     - As a user, I want the application to have an inviting, fun, music-themed design.
     - As a user, I want to be able to see my music data displayed in different formats, including chronologically, alphabetically, by Artist, by Streaming Source, by Discovery Source, etc.
+
 ### Completed
     - [none]
 
@@ -33,3 +34,5 @@ Track-Track is a solution to capture your entire music library in one place, reg
 
 ### Display Songs
 ![display_page](./public/images/wireframes/display_page.png)
+
+## ERD

@@ -37,5 +37,5 @@ Track-Track is a solution to capture your entire music library in one place, reg
 ### Display Songs
 ![display_page](./public/images/wireframes/display_page.png)
 
-## ERD
+## Entity Relationship Diagram (ERD)
 ![erd](./public/images/wireframes/erd.png)

@@ -1,32 +1,44 @@
 const mongoose = require('mongoose');
-const Source = require('./sourceSchema');
-const Discovery = require('./discoverySchema'); 
+const streamSource = require('./sourceSchema');
+const discoverySource = require('./discoverySchema');
+const Link = require('./sourceLinkSchema'); 
+
 
 const trackTrack = new mongoose.Schema({
-  Song: {
+  song: {
     type: String,
     required: true,
   },
-  Artist: {
+  artist: {
     type: String,
     required: true,
   },
-  Album: {
+  album: {
     type: String,
     required: false,
   },
-  DateAdded: {
+  dateAdded: {
     type: Date,
     required: true,
     default: () => new Date().setFullYear(new Date().getFullYear() + 1),
   },
-  Favorite: {
+  favorite: {
     type: Boolean,
     required: true,
     default: false,
   },
-  source: [streamSource],
-  discovery: [discoverySource],
+  source: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Source',
+  }],
+  discovery: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Discovery',
+  }],
+  link: {
+    type: String,
+    required: false,
+  },
 });
 
 const Tracks = mongoose.model('Tracks', trackTrack);

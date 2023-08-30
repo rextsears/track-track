@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const trackController = require('../controllers/tracks');
+const streamingSourceController = require('../controllers/streamingSource');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,7 +17,8 @@ router.get('/add/addTrack', trackController.renderAddNewTrackPage);
 // Route for handling the form submission for creating a new track in the database
 router.post('/add/addTrack', trackController.addNewTrack);
 
-// Route for rendering the "Edit Track" page
+// Routes for rendering the "Edit Track" page
+router.get('/add/editTrack/:id', trackController.renderEditTrackPageWithSources);
 router.get('/add/editTrack/:id', trackController.renderEditTrackPage);
 
 // Route for handling the submission of an edited track from the "Edit Track" page to the database
@@ -39,5 +41,27 @@ router.get('/trackView/byStreamSource', trackController.displaySource);
 
 // Route for display of all tracks by Discovery Source and render on the "All Tracks by Discovery Source" page
 router.get('/trackView/byDiscoSource', trackController.displayDisco);
+
+// Route for displaying the detail of an individual track
+router.get('/trackView/track/:id', trackController.displayTrackDetail);
+
+// Route for viewing the add streaming source form
+router.get('/add/addStreamingSource', streamingSourceController.renderAddStreamingSourcePage);
+
+// Route for handling the form submission for adding a new streaming source
+router.post('/streamingSource/add', streamingSourceController.addStreamingSource);
+
+// Route for viewing all streaming sources
+router.get('/streamingSourceView', streamingSourceController.displayAllStreamingSources);
+
+// Route for rendering the "Edit Streaming Source" page
+router.get('/streamingSource/edit/:id', streamingSourceController.renderEditStreamingSourcePage);
+router.get('/add/addStreamingSource', streamingSourceController.renderAddStreamingSourcePage);
+
+// Route for handling the submission of an edited streaming source
+router.post('/streamingSource/edit/:id', streamingSourceController.editStreamingSource);
+
+// Route for deleting a streaming source
+router.post('/streamingSource/delete/:id', streamingSourceController.deleteStreamingSource);
 
 module.exports = router;

@@ -1,4 +1,5 @@
 const Tracks = require('../models/tracks');
+const StreamingSource = require('../models/streamingSource');
 
 // Controller function to display all tracks and render on the "All Tracks" page
 async function displayAllTracks(req, res) {
@@ -11,40 +12,45 @@ async function displayAllTracks(req, res) {
 }
 
 // Controller function to render the "Add New Track" page
-function renderAddNewTrackPage(req, res) {
-  res.render('add/addTrack');
+async function renderAddNewTrackPage(req, res) {
+  try {
+    const streamingSources = await StreamingSource.find();
+    res.render('add/addTrack', { streamingSources });
+  } catch (error) {
+    res.render('error', { message: 'Error fetching streaming sources', error });
+  }
 }
 
 // Controller function to handle the submission of a new track from the "Add New Track" page to the database
 async function addNewTrack(req, res) {
-    const { song, artist, album, dateAdded, source, discovery, link } = req.body;
-    const favorite = req.body.favorite === 'on'; // Convert to boolean
-    try {
-      const newTrack = new Tracks({
-        song,
-        artist,
-        album,
-        dateAdded,
-        favorite,
-        source,
-        discovery,
-        link,
-      });
-      await newTrack.save();
-      res.redirect('/'); // Redirect to home page or a relevant route
-    } catch (error) {
-      res.render('error', { message: 'Error adding new track', error });
-    }
+  const { song, artist, album, dateAdded, favorite, source, discovery, link } = req.body;
+  try {
+    const newTrack = new Tracks({
+      song,
+      artist,
+      album,
+      dateAdded,
+      favorite,
+      source: [source],
+      discovery,
+      link,
+    });
+    await newTrack.save();
+    res.redirect('/');
+  } catch (error) {
+    res.render('error', { message: 'Error adding new track', error });
   }
+}
 
 // Controller function to render the "Edit Track" page
 async function renderEditTrackPage(req, res) {
   const trackId = req.params.id;
   try {
     const track = await Tracks.findById(trackId);
-    res.render('add/editTrack', { track });
+    const streamingSources = await StreamingSource.find();
+    res.render('add/editTrack', { track, streamingSources });
   } catch (error) {
-    res.render('error', { message: 'Error rendering edit page', error });
+    res.render('error', { message: 'Error rendering edit track page', error });
   }
 }
 
@@ -54,7 +60,7 @@ async function editTrack(req, res) {
   const updatedTrackData = req.body;
   try {
     await Tracks.findByIdAndUpdate(trackId, updatedTrackData);
-    res.redirect('/'); // Redirect to home page or a relevant route
+    res.redirect(`/trackView/track/${trackId}`);
   } catch (error) {
     res.render('error', { message: 'Error editing track', error });
   }
@@ -65,7 +71,7 @@ async function deleteTrack(req, res) {
   const trackId = req.params.id;
   try {
     await Tracks.findByIdAndDelete(trackId);
-    res.redirect('/'); // Redirect to home page or a relevant route
+    res.redirect('/');
   } catch (error) {
     res.render('error', { message: 'Error deleting track', error });
   }
@@ -120,6 +126,35 @@ async function displaySong(req, res) {
       res.render('error', { message: 'Error displaying tracks by discovery source', error });
     }
   }
+
+  // Controller function to display the detail of an individual track
+async function displayTrackDetail(req, res) {
+  const trackId = req.params.id;
+  try {
+    const track = await Tracks.findById(trackId);
+    if (!track) {
+      throw new Error('Track not found');
+    }
+    res.render('trackView/trackDetail', { track });
+  } catch (error) {
+    res.render('error', { message: 'Error displaying track detail', error });
+  }
+}
+
+async function renderEditTrackPageWithSources(req, res) {
+  const trackId = req.params.id;
+
+  try {
+    const track = await Tracks.findById(trackId);
+    const streamingSources = await StreamingSource.find();
+    res.render('add/editTrack', {
+      track: track,
+      streamingSources: streamingSources
+    });
+  } catch (error) {
+    res.render('error', { message: 'Error rendering edit page', error });
+  }
+}
   
   module.exports = {
     displayAllTracks,
@@ -133,4 +168,6 @@ async function displaySong(req, res) {
     displayArtist,
     displaySource,
     displayDisco,
+    displayTrackDetail,
+    renderEditTrackPageWithSources,
   };

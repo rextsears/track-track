@@ -9,27 +9,29 @@
     <table>
       <thead>
         <tr>
+          <th>Favorite</th>
           <th>Song</th>
           <th>Artist</th>
           <th>Album</th>
           <th>Date Added</th>
-          <th>Favorite</th>
           <th>Source</th>
           <th>Discovery</th>
           <th>Link</th>
+          <th>Edit</th>
         </tr>
       </thead>
       <tbody>
         <% tracks.forEach(track => { %>
           <tr>
-            <td><%= track.song %></td>
+            <td><%= track.favorite ? 'Yes' : 'No' %></td>
+            <td><a href="/trackView/track/<%= track._id %>"><%= track.song %></a></td>
             <td><%= track.artist %></td>
             <td><%= track.album %></td>
             <td><%= track.dateAdded.toDateString() %></td>
-            <td><%= track.favorite ? 'Yes' : 'No' %></td>
             <td><%= track.source.join(', ') %></td>
             <td><%= track.discovery.join(', ') %></td>
             <td><a href="<%= track.link %>"><%= track.link %></a></td>
+            <td><a href="/add/editTrack/<%= track._id %>">Edit</a></td>
           </tr>
         <% }); %>
       </tbody>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Streaming Sources - Track-Track</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <h1>Streaming Sources</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% streamingSources.forEach(source => { %>
+        <tr>
+          <td><%= source.name %></td>
+          <td><a href="/streamingSource/edit/<%= source._id %>">Edit</a></td>
+          <td><a href="/streamingSource/delete/<%= source._id %>" onclick="return confirmDelete();">Delete</a></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <a href="/add/addStreamingSource">Add New Streaming Source</a>
+</body>
+</html>

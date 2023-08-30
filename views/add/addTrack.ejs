@@ -18,7 +18,11 @@
     <label for="favorite">Favorite:</label>
     <input type="checkbox" name="favorite"><br>
     <label for="source">Streaming Source:</label>
-    <input type="text" name="source"><br>
+    <select name="source">
+      <% streamingSources.forEach(source => { %>
+        <option value="<%= source._id %>"><%= source.name %></option>
+      <% }); %>
+    </select><br>
     <label for="discovery">Discovery Source:</label>
     <input type="text" name="discovery"><br>
     <label for="link">Link:</label>

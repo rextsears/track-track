@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Track Detail - <%= track.song %> by <%= track.artist %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+  <h1>Track Detail - <%= track.song %> by <%= track.artist %></h1>
+  <ul>
+    <li><strong>Song:</strong> <%= track.song %></li>
+    <li><strong>Artist:</strong> <%= track.artist %></li>
+    <li><strong>Album:</strong> <%= track.album %></li>
+    <li><strong>Date Added:</strong> <%= track.dateAdded.toDateString() %></li>
+    <li><strong>Favorite:</strong> <%= track.favorite ? 'Yes' : 'No' %></li>
+    <li><strong>Streaming Source:</strong> <%= track.source.join(', ') %></li>
+    <li><strong>Discovery Source:</strong> <%= track.discovery.join(', ') %></li>
+    <li><strong>Link:</strong> <a href="<%= track.link %>"><%= track.link %></a></li>
+  </ul>
+  <a href="/trackView/all">Back to All Tracks</a>
+  <a href="/add/editTrack/<%= track._id %>">Edit Track</a>
+</body>
+</html>

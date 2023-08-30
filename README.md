@@ -16,6 +16,7 @@ Track-Track is a solution to capture your entire music library in one place, reg
     - As a user, I want the ability to mark certain songs as 'Favorites.'
     - As a user, I want the ability to be the only user to see my personal music information and have the information otherwise kept private.
     - As a user, I want the ability to be the only person with the ability to add, edit, or delete my personal music information.
+    - As a user, I want the ability to have other users leave comments and ratings about individual tracks in my music collection.
     - As a user, I want the ability to interact with the application and database in a manner that is user friendly and familiar to the look and feel of other apps I use regularly.
 
 ### Ice Box

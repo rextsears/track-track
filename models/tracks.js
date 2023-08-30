@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const streamSource = require('./sourceSchema');
 const discoverySource = require('./discoverySchema');
-const Link = require('./sourceLinkSchema'); 
 
 
 const trackTrack = new mongoose.Schema({
@@ -28,12 +27,12 @@ const trackTrack = new mongoose.Schema({
     default: false,
   },
   source: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Source',
+    type: String,
+    required: false,
   }],
   discovery: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Discovery',
+    type: String,
+    required: false,
   }],
   link: {
     type: String,

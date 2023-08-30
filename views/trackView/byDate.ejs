@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+  <h1><%= title %></h1>
+  <ul>
+    <% tracks.forEach(track => { %>
+      <li>
+        <strong><%= track.song %></strong> added on <%= track.dateAdded.toDateString() %>
+        
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

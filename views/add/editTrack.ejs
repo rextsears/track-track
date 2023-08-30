@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Track</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+  <h1>Edit Track</h1>
+  <form action="/edit/<%= track._id %>" method="POST">
+    <label for="song">Song:</label>
+    <input type="text" name="song" value="<%= track.song %>" required><br>
+    <label for="artist">Artist:</label>
+    <input type="text" name="artist" value="<%= track.artist %>" required><br>
+    <label for="album">Album:</label>
+    <input type="text" name="album" value="<%= track.album %>"><br>
+    <label for="dateAdded">Date Added:</label>
+    <input type="date" name="dateAdded" value="<%= track.dateAdded.toISOString().split('T')[0] %>" required><br>
+    <label for="favorite">Favorite:</label>
+    <input type="checkbox" name="favorite" <% if (track.favorite) { %>checked<% } %>><br>
+    <label for="source">Streaming Source:</label>
+    <input type="text" name="source" value="<%= track.source.join(', ') %>"><br>
+    <label for="discovery">Discovery Source:</label>
+    <input type="text" name="discovery" value="<%= track.discovery.join(', ') %>"><br>
+    <label for="link">Link:</label>
+    <input type="url" name="link" value="<%= track.link %>"><br>
+    <input type="submit" value="Save Changes">
+  </form>
+</body>
+</html>

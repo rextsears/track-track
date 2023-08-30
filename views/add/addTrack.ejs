@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add New Track</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+  <h1>Add New Track</h1>
+  <form action="/add/addTrack" method="POST">
+    <label for="song">Song:</label>
+    <input type="text" name="song" required><br>
+    <label for="artist">Artist:</label>
+    <input type="text" name="artist" required><br>
+    <label for="album">Album:</label>
+    <input type="text" name="album"><br>
+    <label for="dateAdded">Date Added:</label>
+    <input type="date" name="dateAdded" required><br>
+    <label for="favorite">Favorite:</label>
+    <input type="checkbox" name="favorite"><br>
+    <label for="source">Streaming Source:</label>
+    <input type="text" name="source"><br>
+    <label for="discovery">Discovery Source:</label>
+    <input type="text" name="discovery"><br>
+    <label for="link">Link:</label>
+    <input type="url" name="link"><br>
+    <input type="submit" value="Add Track">
+  </form>
+</body>
+</html>

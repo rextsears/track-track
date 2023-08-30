@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Track-Track</title>
+    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Track-Track</h1>
-    <p>Collect music</p>
-    <a href="/viewTracks/all">View All Tracks</a>
-    <a href="/tracks/addNew">Add New Track</a>
-    <a href="/tracks/addNewSource">Add New Source</a>
-    <a href="/tracks/addNewDiscovery">Add New Discovery</a>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    
+    
+    <ul>
+      <li><a href="/add/addTrack">Add New Track</a></li>
+      <li><a href="/add/editTrack">Edit Track</a></li>
+      <li><a href="/trackView/all">All Tracks</a></li>
+      <li><a href="/trackView/bySong">All Tracks by Song A-Z</a></li>
+      <li><a href="/trackView/byDate">All Tracks by Date Added</a></li>
+      <li><a href="/trackView/byArtist">All Tracks by Artist</a></li>
+      <li><a href="/trackView/byStreamSource">All Tracks by Streaming Source</a></li>
+      <li><a href="/trackView/byDiscoSource">All Tracks by Discovery Source</a></li>
+    </ul>
   </body>
 </html>

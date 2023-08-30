@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+  <h1><%= title %></h1>
+  <ul>
+    <% tracks.forEach(track => { %>
+      <li>
+        <strong><%= track.source.join(', ') %></strong>: <%= track.song %> by <%= track.artist %>
+        
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

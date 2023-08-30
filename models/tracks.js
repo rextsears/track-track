@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const streamSource = require('./sourceSchema');
-const discoverySource = require('./discoverySchema');
 
 
 const trackTrack = new mongoose.Schema({

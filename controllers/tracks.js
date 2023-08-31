@@ -63,7 +63,9 @@ async function editTrack(req, res) {
 
   try {
     await Tracks.findByIdAndUpdate(trackId, updatedTrackData);
-    res.redirect('/');
+    const allTracks = await Tracks.find();
+    res.render('trackView/all', { tracks: allTracks });
+    res.redirect('trackView/all');
   } catch (error) {
     res.render('error', { message: 'Error editing track', error });
   }

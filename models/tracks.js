@@ -26,7 +26,7 @@ const trackTrack = new mongoose.Schema({
   },
   source: [{
     type: String,
-    required: false,
+    required: true,
   }],
   discovery: [{
     type: String,

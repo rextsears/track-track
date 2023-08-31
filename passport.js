@@ -1,5 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const userController = require('./controllers/userController');
 const User = require('./models/User');
 
 passport.use(
@@ -14,7 +15,7 @@ passport.use(
         let user = await User.findOne({ googleId: profile.id });
 
         if (!user) {
-          user = await User.create({ googleId: profile.id, username: profile.displayName });
+          user = await userController.createUser(profile.id, profile.displayName);
         }
 
         return done(null, user);
@@ -31,9 +32,11 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findById(id);
+    const user = await userController.getUserById(id);
     done(null, user);
-  } catch (error) {
-    done(error, null);
+  } catch (err) {
+    done(err, null);
   }
 });
+
+module.exports = passport;

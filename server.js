@@ -16,19 +16,6 @@ const usersRouter = require('./routes/users');
 
 const app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
 // Configure Google OAuth user session
 app.use(
   session({
@@ -46,7 +33,26 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Google OAuth Routes
+// Set the user in response locals
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+// Routes for Google OAuth
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
 
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {

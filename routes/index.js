@@ -4,7 +4,7 @@ const trackController = require('../controllers/tracks');
 const streamingSourceController = require('../controllers/streamingSource');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('index', { title: 'Track-Track' });
 });
 

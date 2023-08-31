@@ -8,6 +8,12 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     
+    <% if (locals.user) { %>
+      <p>Welcome, <%= locals.user.username %> !</p>
+    <% } else { %>
+      <p>Welcome, Guest! <a href="/auth/google">Log in</a></p>
+    <% } %>
+    
     <ul>
       <li><a href="/add/addTrack">Add New Track</a></li>
       <li><a href="/add/editTrack">Edit Track</a></li>

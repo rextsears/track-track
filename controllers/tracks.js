@@ -1,5 +1,6 @@
 const Tracks = require('../models/tracks');
 const StreamingSource = require('../models/streamingSource');
+const youtubeController = require('./youtube');
 
 // Controller function to display all tracks and render on the "All Tracks" page
 async function displayAllTracks(req, res) {
@@ -133,15 +134,22 @@ async function displaySong(req, res) {
     }
   }
 
-  // Controller function to display the detail of an individual track
-async function displayTrackDetail(req, res) {
-  const trackId = req.params.id;
-  try {
+  // Controller function to display the detail of an individual track including YouTube
+  async function displayTrackDetail(req, res) {
+    const trackId = req.params.id;
+    try {
       const track = await Tracks.findById(trackId).populate('user');
       if (!track) {
         throw new Error('Track not found');
       }
-      res.render('trackView/trackDetail', { track });
+  
+      let youtubeVideoId = null;
+      if (track.source.includes('YouTube') && track.link.includes('youtube.com/watch')) {
+        const urlParams = new URLSearchParams(new URL(track.link).search);
+        youtubeVideoId = urlParams.get('v');
+      }
+  
+      res.render('trackView/trackDetail', { track, youtubeVideoId });
     } catch (error) {
       res.render('error', { message: 'Error displaying track detail', error });
     }

@@ -17,6 +17,12 @@
     <li><strong>Link:</strong> <a href="<%= track.link %>"><%= track.link %></a></li>
     <li><strong>Added By:</strong> <%= track.user ? track.user.username : 'Guest User' %></li>
   </ul>
+  <% if (youtubeVideoId) { %>
+    <h3><strong>YouTube Video:</strong></h3>
+    <div class="youtube-video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= youtubeVideoId %>" frameborder="0" allowfullscreen></iframe>
+    </div>
+  <% } %>
   <a href="/trackView/all">Back to All Tracks</a>
   <a href="/add/editTrack/<%= track._id %>">Edit Track</a>
 </body>

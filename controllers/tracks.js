@@ -137,7 +137,7 @@ async function displaySong(req, res) {
 async function displayTrackDetail(req, res) {
   const trackId = req.params.id;
   try {
-      const track = await Tracks.findById(trackId).populate('user'); // Add .populate('user')
+      const track = await Tracks.findById(trackId).populate('user');
       if (!track) {
         throw new Error('Track not found');
       }

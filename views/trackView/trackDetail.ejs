@@ -15,6 +15,7 @@
     <li><strong>Streaming Source:</strong> <%= track.source.join(', ') %></li>
     <li><strong>Discovery Source:</strong> <%= track.discovery.join(', ') %></li>
     <li><strong>Link:</strong> <a href="<%= track.link %>"><%= track.link %></a></li>
+    <li><strong>Added By:</strong> <%= track.user ? track.user.username : 'Guest User' %></li>
   </ul>
   <a href="/trackView/all">Back to All Tracks</a>
   <a href="/add/editTrack/<%= track._id %>">Edit Track</a>

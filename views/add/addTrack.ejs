@@ -23,7 +23,7 @@
     <label for="source">Streaming Source:</label>
     <select name="source">
       <% streamingSources.forEach(source => { %>
-        <option value="<%= source._id %>"><%= source.name %></option>
+        <option value="<%= source.name %>"><%= source.name %></option>
       <% }); %>
     </select><br>
     <label for="discovery">Discovery Source:</label>

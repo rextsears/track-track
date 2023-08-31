@@ -137,15 +137,15 @@ async function displaySong(req, res) {
 async function displayTrackDetail(req, res) {
   const trackId = req.params.id;
   try {
-    const track = await Tracks.findById(trackId);
-    if (!track) {
-      throw new Error('Track not found');
+      const track = await Tracks.findById(trackId).populate('user'); // Add .populate('user')
+      if (!track) {
+        throw new Error('Track not found');
+      }
+      res.render('trackView/trackDetail', { track });
+    } catch (error) {
+      res.render('error', { message: 'Error displaying track detail', error });
     }
-    res.render('trackView/trackDetail', { track });
-  } catch (error) {
-    res.render('error', { message: 'Error displaying track detail', error });
   }
-}
 
 async function renderEditTrackPageWithSources(req, res) {
   const trackId = req.params.id;

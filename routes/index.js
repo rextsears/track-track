@@ -64,4 +64,11 @@ router.post('/streamingSource/edit/:id', streamingSourceController.editStreaming
 // Route for deleting a streaming source
 router.post('/streamingSource/delete/:id', streamingSourceController.deleteStreamingSource);
 
+// Route for user logout
+router.get('/auth/logout', (req, res) => {
+  req.logout(() => {
+    res.redirect('/');
+  });
+});
+
 module.exports = router;

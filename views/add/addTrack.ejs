@@ -16,7 +16,10 @@
     <label for="dateAdded">Date Added:</label>
     <input type="date" name="dateAdded" required><br>
     <label for="favorite">Favorite:</label>
-    <input type="checkbox" name="favorite"><br>
+        <select name="favorite">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+    </select><br>
     <label for="source">Streaming Source:</label>
     <select name="source">
       <% streamingSources.forEach(source => { %>

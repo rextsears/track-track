@@ -59,7 +59,7 @@ async function editTrack(req, res) {
   const trackId = req.params.id;
   const updatedTrackData = req.body;
 
-  updatedTrackData.favorite = updatedTrackData.favorite === 'on';
+  updatedTrackData.favorite = updatedTrackData.favorite === 'true';
 
   try {
     await Tracks.findByIdAndUpdate(trackId, updatedTrackData);

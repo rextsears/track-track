@@ -21,7 +21,10 @@
     <label for="dateAdded">Date Added:</label>
     <input type="date" name="dateAdded" value="<%= track.dateAdded.toISOString().split('T')[0] %>" required><br>
     <label for="favorite">Favorite:</label>
-    <input type="checkbox" name="favorite" <% if (track.favorite) { %>checked<% } %> value="true">
+        <select name="favorite">
+            <option value="true" <%= track.favorite ? 'selected' : '' %>>Yes</option>
+            <option value="false" <%= !track.favorite ? 'selected' : '' %>>No</option>
+    </select><br>
     <label for="source">Streaming Source:</label>
     <select name="source">
       <% streamingSources.forEach(source => { %>

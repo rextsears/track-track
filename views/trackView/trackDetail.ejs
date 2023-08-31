@@ -23,6 +23,39 @@
       <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= youtubeVideoId %>" frameborder="0" allowfullscreen></iframe>
     </div>
   <% } %>
+  
+  <% if (track.comments && track.comments.length > 0) { %>
+    <h3><strong>Comments:</strong></h3>
+    <ul class="comments-list">
+      <% track.comments.forEach(comment => { %>
+        <li>
+          <p><strong><%= comment.user ? comment.user : 'Guest User' %></strong> - Rating: <%= comment.rating %> - <%= comment.text %></p>
+          <% if (user && (comment.user === user.username || user.isAdmin)) { %>
+            <a href="/trackView/track/<%= track._id %>/comment/<%= comment._id %>/edit">Edit</a>
+            <a href="/trackView/track/<%= track._id %>/comment/<%= comment._id %>/delete">Delete</a>
+          <% } %>
+        </li>
+      <% }); %>
+    </ul>
+  <% } %>
+
+<% if (user) { %>
+    <h3><strong>Add a Comment:</strong></h3>
+    <form action="/trackView/track/<%= track._id %>/comment/add" method="POST">
+      <label for="rating">Rating:</label>
+      <select name="rating" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select><br>
+      <label for="text">Comment:</label>
+      <textarea name="text" required></textarea><br>
+      <input type="submit" value="Add Comment">
+    </form>
+  <% } %>
+  
   <a href="/trackView/all">Back to All Tracks</a>
   <a href="/">Back to Home</a>
   <a href="/add/editTrack/<%= track._id %>">Edit Track</a>

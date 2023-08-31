@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Comment = require('./comment');
 
 
 const trackTrack = new mongoose.Schema({
@@ -40,6 +41,7 @@ const trackTrack = new mongoose.Schema({
     type: String,
     required: false,
   },
+  comments: [Comment.schema],
 });
 
 const Tracks = mongoose.model('Tracks', trackTrack);

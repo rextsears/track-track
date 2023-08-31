@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const trackController = require('../controllers/tracks');
 const streamingSourceController = require('../controllers/streamingSource');
+const commentController = require('../controllers/comment');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -73,5 +74,17 @@ router.get('/auth/logout', (req, res) => {
 
 // Route for displaying tracks added by the logged-in user
 router.get('/trackView/userTracks', trackController.displayUserTracks);
+
+// Route for adding a comment to a track
+router.post('/trackView/track/:trackId/comment/add', commentController.addComment);
+
+// Route to render the edit comment page
+router.get('/trackView/track/:trackId/comment/:commentId/edit', commentController.renderEditCommentPage);
+
+// Route to update the edited comment
+router.post('/trackView/track/:trackId/comment/:commentId/edit', commentController.editComment);
+
+// Route for deleting a comment
+router.get('/trackView/track/:trackId/comment/:commentId/delete', commentController.deleteComment);
 
 module.exports = router;

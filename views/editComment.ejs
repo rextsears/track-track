@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Comment</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+  <h1>Edit Comment</h1>
+  <form action="/trackView/track/<%= track._id %>/comment/<%= comment._id %>/edit" method="POST">
+    <label for="rating">Rating (1 to 5):</label>
+    <select name="rating">
+      <option value="1" <%= comment.rating === 1 ? 'selected' : '' %>>1</option>
+      <option value="2" <%= comment.rating === 2 ? 'selected' : '' %>>2</option>
+      <option value="3" <%= comment.rating === 3 ? 'selected' : '' %>>3</option>
+      <option value="4" <%= comment.rating === 4 ? 'selected' : '' %>>4</option>
+      <option value="5" <%= comment.rating === 5 ? 'selected' : '' %>>5</option>
+    </select><br>
+    <label for="text">Comment:</label>
+    <textarea name="text"><%= comment.text %></textarea><br>
+    <input type="submit" value="Update Comment">
+  </form>
+  <a href="/trackView/track/<%= track._id %>">Back to Track Detail</a>
+</body>
+</html>

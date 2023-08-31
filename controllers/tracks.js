@@ -34,6 +34,7 @@ async function addNewTrack(req, res) {
       source: [source],
       discovery,
       link,
+      user: req.user._id,
     });
     await newTrack.save();
     res.redirect('/');
@@ -62,7 +63,7 @@ async function editTrack(req, res) {
   updatedTrackData.favorite = updatedTrackData.favorite === 'true';
 
   try {
-    await Tracks.findByIdAndUpdate(trackId, updatedTrackData);
+    await Tracks.findByIdAndUpdate(trackId, { ...updatedTrackData, user: req.user._id });
     const allTracks = await Tracks.find();
     res.render('trackView/all', { tracks: allTracks });
     res.redirect('trackView/all');

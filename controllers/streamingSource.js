@@ -15,7 +15,7 @@ async function addStreamingSource(req, res) {
   }
 };
 
-// Display all streaming sources
+// Controller function to display all streaming sources
 async function displayAllStreamingSources(req, res) {
   try {
     const streamingSources = await StreamingSource.find();
@@ -25,7 +25,7 @@ async function displayAllStreamingSources(req, res) {
   }
 };
 
-// Edit a streaming source (GET)
+// Controller function to render the editStreamingSource page
 async function renderEditStreamingSourcePage(req, res) {
   const sourceId = req.params.id;
   try {
@@ -36,7 +36,7 @@ async function renderEditStreamingSourcePage(req, res) {
   }
 };
 
-// Edit a streaming source (POST)
+// Controller function to edit a streaming source
 async function editStreamingSource(req, res) {
   const sourceId = req.params.id;
   const updatedName = req.body.name;
@@ -48,7 +48,7 @@ async function editStreamingSource(req, res) {
   }
 };
 
-// Delete a streaming source
+// Controller function to delete a streaming source
 async function deleteStreamingSource(req, res) {
   const sourceId = req.params.id;
   try {

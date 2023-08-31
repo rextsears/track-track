@@ -134,7 +134,7 @@ async function displaySong(req, res) {
     }
   }
 
-  // Controller function to display the detail of an individual track including YouTube
+  // Controller function to display the detail of an individual track including YouTube player if applicable
   async function displayTrackDetail(req, res) {
     const trackId = req.params.id;
     try {
@@ -155,6 +155,7 @@ async function displaySong(req, res) {
     }
   }
 
+// Controller function to render editTrack.ejs page
 async function renderEditTrackPageWithSources(req, res) {
   const trackId = req.params.id;
 
@@ -170,7 +171,7 @@ async function renderEditTrackPageWithSources(req, res) {
   }
 }
 
-// controllers/tracks.js
+// Controller function to render userTracks.ejs to only display tracks added by the active user
 async function displayUserTracks(req, res) {
   try {
     const userId = req.user._id; // Get the logged-in user's ID

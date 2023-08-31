@@ -1,6 +1,6 @@
 const User = require('../models/User');
 
-// Controller function to fetch user data by ID
+// Controller function to get user data by ID
 async function getUserById(userId) {
   try {
     const user = await User.findById(userId);

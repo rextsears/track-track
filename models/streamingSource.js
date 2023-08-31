@@ -1,4 +1,3 @@
-// models/streamingSource.js
 const mongoose = require('mongoose');
 
 const streamingSourceSchema = new mongoose.Schema({

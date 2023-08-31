@@ -58,9 +58,12 @@ async function renderEditTrackPage(req, res) {
 async function editTrack(req, res) {
   const trackId = req.params.id;
   const updatedTrackData = req.body;
+
+  updatedTrackData.favorite = updatedTrackData.favorite === 'on';
+
   try {
     await Tracks.findByIdAndUpdate(trackId, updatedTrackData);
-    res.redirect(`/trackView/track/${trackId}`);
+    res.redirect('/');
   } catch (error) {
     res.render('error', { message: 'Error editing track', error });
   }

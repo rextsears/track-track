@@ -71,4 +71,7 @@ router.get('/auth/logout', (req, res) => {
   });
 });
 
+// Route for displaying tracks added by the logged-in user
+router.get('/trackView/userTracks', trackController.displayUserTracks);
+
 module.exports = router;

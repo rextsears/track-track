@@ -6,10 +6,10 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
     
     <% if (locals.user) { %>
-      <p>Welcome, <%= locals.user.username %>!</p>
+      <p>Welcome to <%= title %>, <%= locals.user.username %>!</p>
+      <a href="/trackView/userTracks">My Tracks</a>
       <a href="/auth/logout">Log Out</a>
     <% } else { %>
       <p>Welcome, Guest! <a href="/auth/google">Log in</a></p>

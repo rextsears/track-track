@@ -161,6 +161,18 @@ async function renderEditTrackPageWithSources(req, res) {
     res.render('error', { message: 'Error rendering edit page', error });
   }
 }
+
+// controllers/tracks.js
+async function displayUserTracks(req, res) {
+  try {
+    const userId = req.user._id; // Get the logged-in user's ID
+    const userTracks = await Tracks.find({ user: userId });
+    const user = req.user.username; // Get the logged-in user's username
+    res.render('trackView/userTracks', { tracks: userTracks, user });
+  } catch (error) {
+    res.render('error', { message: 'Error displaying user tracks', error });
+  }
+}
   
   module.exports = {
     displayAllTracks,
@@ -176,4 +188,5 @@ async function renderEditTrackPageWithSources(req, res) {
     displayDisco,
     displayTrackDetail,
     renderEditTrackPageWithSources,
+    displayUserTracks,
   };

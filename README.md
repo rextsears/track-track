@@ -7,11 +7,10 @@ Track-Track is a solution to capture your entire music library in one place, reg
 ## User Stories
 
 ### Current / MVP
-    - As a user, I want the ability to have other users leave comments and ratings about individual tracks in my music collection.
-
+    - As a user, I want the application to have an inviting, fun, music-themed design.
 
 ### Ice Box
-    - As a user, I want the application to have an inviting, fun, music-themed design.
+    - [none]
 
 ### Completed
     - As a user, I want the ability to load the application in a web browser.
@@ -25,6 +24,7 @@ Track-Track is a solution to capture your entire music library in one place, reg
     - As a user, I want the ability to 'log in' to the app to only see my information.
     - As a user, I want the ability to interact with the application and database in a manner that is user friendly and familiar to the look and feel of other apps I use regularly.
     - As a user, I want the application to automatically display a YouTube video for a song on the Track Detail page, if a YouTube link is entered in the Link field.
+    - As a user, I want the ability to have other users leave comments and ratings about individual tracks in my music collection.
 
 
 ## Wireframes

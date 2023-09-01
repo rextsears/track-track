@@ -72,7 +72,13 @@ async function deleteComment(req, res) {
         throw new Error('Track not found');
       }
   
-      await track.comments.findByIdAndDelete(commentId);
+      // Find the comment by its _id and remove it
+      await Comment.findByIdAndDelete(commentId);
+  
+      // Remove the reference to the comment from the track's comments array
+      track.comments.pull(commentId);
+  
+      await track.save();
   
       res.redirect(`/trackView/track/${trackId}`);
     } catch (error) {

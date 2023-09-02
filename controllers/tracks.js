@@ -1,5 +1,6 @@
 const Tracks = require('../models/tracks');
 const StreamingSource = require('../models/streamingSource');
+const User = require('../models/User');
 const youtubeController = require('./youtube');
 
 // Controller function to display all tracks and render on the "All Tracks" page
@@ -41,6 +42,27 @@ async function addNewTrack(req, res) {
     res.redirect('/');
   } catch (error) {
     res.render('error', { message: 'Error adding new track', error });
+  }
+}
+
+// Controller function to check if the user is authorized to edit or delete a track
+async function checkTrackOwnership(req, res, next) {
+  const trackId = req.params.id;
+  
+  try {
+    const track = await Tracks.findById(trackId);
+    
+    if (!track) {
+      throw new Error('Track not found');
+    }
+    
+    if (track.user.toString() !== req.user._id.toString()) {
+      throw new Error('Unauthorized');
+    }
+    
+    next();
+  } catch (error) {
+    res.render('error', { message: 'Unauthorized', error });
   }
 }
 
@@ -187,6 +209,7 @@ async function displayUserTracks(req, res) {
     displayAllTracks,
     renderAddNewTrackPage,
     addNewTrack,
+    checkTrackOwnership,
     renderEditTrackPage,
     editTrack,
     deleteTrack,

@@ -42,6 +42,34 @@ async function renderEditCommentPage(req, res) {
     }
   }
 
+  // Controller function to check if the user is authorized to edit or delete a comment
+  async function checkCommentOwnership(req, res, next) {
+    const trackId = req.params.trackId;
+    const commentId = req.params.commentId;
+    
+    try {
+      const track = await Tracks.findById(trackId);
+      
+      if (!track) {
+        throw new Error('Track not found');
+      }
+      
+      const comment = track.comments.id(commentId);
+      
+      if (!comment) {
+        throw new Error('Comment not found');
+      }
+      
+      if (comment.user.toString() !== req.user.username) {
+        throw new Error('Unauthorized');
+      }
+      
+      next();
+    } catch (error) {
+      res.render('error', { message: 'Unauthorized', error });
+    }
+  }
+
 // Controller function to edit a comment
 async function editComment(req, res) {
   const { rating, text } = req.body;
@@ -89,6 +117,7 @@ async function deleteComment(req, res) {
 
 module.exports = {
   addComment,
+  checkCommentOwnership,
   editComment,
   deleteComment,
   renderEditCommentPage,

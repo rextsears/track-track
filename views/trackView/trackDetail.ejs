@@ -39,6 +39,10 @@
     </ul>
   <% } %>
 
+  <% if (user && (user.username === track.user.username || user.isAdmin)) { %>
+    <a href="/add/editTrack/<%= track._id %>">Edit Track</a>
+  <% } %>
+
 <% if (user) { %>
     <h3><strong>Add a Comment:</strong></h3>
     <form action="/trackView/track/<%= track._id %>/comment/add" method="POST">
@@ -58,6 +62,5 @@
   
   <a href="/trackView/all">Back to All Tracks</a>
   <a href="/">Back to Home</a>
-  <a href="/add/editTrack/<%= track._id %>">Edit Track</a>
 </body>
 </html>

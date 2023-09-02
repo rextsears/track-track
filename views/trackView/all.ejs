@@ -32,7 +32,11 @@
             <td><%= track.source.join(', ') %></td>
             <td><%= track.discovery.join(', ') %></td>
             <td><a href="<%= track.link %>"><%= track.link %></a></td>
-            <td><a href="/add/editTrack/<%= track._id %>">Edit</a></td>
+            <td>
+              <% if (user && track.user.toString() === user._id.toString()) { %>
+                <a href="/add/editTrack/<%= track._id %>">Edit</a>
+              <% } %>
+            </td>
           </tr>
         <% }); %>
       </tbody>

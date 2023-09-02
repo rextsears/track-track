@@ -18,6 +18,10 @@ router.get('/add/addTrack', trackController.renderAddNewTrackPage);
 // Route for handling the form submission for creating a new track in the database
 router.post('/add/addTrack', trackController.addNewTrack);
 
+// Routes for checking permissions to edit or delete tracks
+router.post('/add/editTrack/:id', trackController.checkTrackOwnership, trackController.editTrack);
+router.post('/tracks/delete/:id', trackController.checkTrackOwnership, trackController.deleteTrack);
+
 // Routes for rendering the "Edit Track" page
 router.get('/add/editTrack/:id', trackController.renderEditTrackPageWithSources);
 router.get('/add/editTrack/:id', trackController.renderEditTrackPage);
@@ -77,6 +81,11 @@ router.get('/trackView/userTracks', trackController.displayUserTracks);
 
 // Route for adding a comment to a track
 router.post('/trackView/track/:trackId/comment/add', commentController.addComment);
+
+// Routes for checking permissions to edit or delete comments
+router.get('/trackView/track/:trackId/comment/:commentId/edit', commentController.renderEditCommentPage);
+router.post('/trackView/track/:trackId/comment/:commentId/edit', commentController.checkCommentOwnership, commentController.editComment);
+router.get('/trackView/track/:trackId/comment/:commentId/delete', commentController.checkCommentOwnership, commentController.deleteComment);
 
 // Route to render the edit comment page
 router.get('/trackView/track/:trackId/comment/:commentId/edit', commentController.renderEditCommentPage);

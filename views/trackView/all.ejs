@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>All Tracks - Track-Track</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
     <h1>All Tracks</h1>
     <a href="/">Back to Home</a>
-    <table>
-      <thead>
-        <tr>
-          <th>Favorite</th>
-          <th>Song</th>
-          <th>Artist</th>
-          <th>Album</th>
-          <th>Date Added</th>
-          <th>Source</th>
-          <th>Discovery</th>
-          <th>Link</th>
-          <th>Edit</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% tracks.forEach(track => { %>
-          <tr>
-            <td><%= track.favorite ? 'Yes' : 'No' %></td>
-            <td><a href="/trackView/track/<%= track._id %>"><%= track.song %></a></td>
-            <td><%= track.artist %></td>
-            <td><%= track.album %></td>
-            <td><%= track.dateAdded.toDateString() %></td>
-            <td><%= track.source.join(', ') %></td>
-            <td><%= track.discovery.join(', ') %></td>
-            <td><a href="<%= track.link %>"><%= track.link %></a></td>
-            <td>
-              <% if (user && track.user.toString() === user._id.toString()) { %>
-                <a href="/add/editTrack/<%= track._id %>">Edit</a>
-              <% } %>
-            </td>
-          </tr>
-        <% }); %>
-      </tbody>
+    <a href="/add/addTrack">Add New Track</a>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Favorite</th>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Album</th>
+                <th>Date Added</th>
+                <th>Source</th>
+                <th>Discovery</th>
+                <th>Link</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tracks.forEach(track => { %>
+                <tr>
+                    <td><%= track.favorite ? 'Yes' : 'No' %></td>
+                    <td><a href="/trackView/track/<%= track._id %>"><%= track.song %></a></td>
+                    <td><%= track.artist %></td>
+                    <td><%= track.album %></td>
+                    <td><%= track.dateAdded.toDateString() %></td>
+                    <td><%= track.source.join(', ') %></td>
+                    <td><%= track.discovery.join(', ') %></td>
+                    <td>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary" onclick="window.open('<%= track.link %>', '_blank')"><%= track.source %></button>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="/add/editTrack/<%= track._id %>">
+                            <img src="/images/icons/edit.png" alt="Edit Icon" width="24" height="24">
+                        </a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
     </table>
-  </body>
+</body>
 </html>

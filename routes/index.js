@@ -23,14 +23,14 @@ router.post('/add/editTrack/:id', trackController.checkTrackOwnership, trackCont
 router.post('/tracks/delete/:id', trackController.checkTrackOwnership, trackController.deleteTrack);
 
 // Routes for rendering the "Edit Track" page
-router.get('/add/editTrack/:id', trackController.renderEditTrackPageWithSources);
+//router.get('/add/editTrack/:id', trackController.renderEditTrackPageWithSources);
 router.get('/add/editTrack/:id', trackController.renderEditTrackPage);
 
 // Route for handling the submission of an edited track from the "Edit Track" page to the database
-router.post('/add/editTrack/:id', trackController.editTrack);
+//router.post('/add/editTrack/:id', trackController.editTrack);
 
 // Route for deleting a track from the database
-router.post('/tracks/delete/:id', trackController.deleteTrack);
+//router.post('/tracks/delete/:id', trackController.deleteTrack);
 
 // Route for display of all tracks alphabetically by Song and render on the "All Tracks by Song A-Z" page
 router.get('/trackView/bySong', trackController.displaySong);

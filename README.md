@@ -4,6 +4,10 @@
 
 Track-Track is a solution to capture your entire music library in one place, regardless of the streaming source. The intention of Track-Track is not to play music, but rather to keep track of the music library of a user in an interactive database free of what music services they are currently subscribed to. Additionally, Track-Track aims to capture memories as users add music to their library, keeping track of where the user originally discovered a song.
 
+## Getting Started
+
+Launch the app here!
+
 ## Features
 ### Current Features
     - Music library information stored in a database.
@@ -39,6 +43,20 @@ Track-Track is a solution to capture your entire music library in one place, reg
 
     - Increase functionality of 'Discovery Source' to have it's own schema and view pages. Make the sources specific to each user, with the ability to add greater detail in more fields, etc.
 
+### Technologies Used
+    - HTML, CSS, JS
+    - EJS [4.18.2]
+    - MongoDB [5.8.1]
+    - Mongoose [7.5.0]
+    - Morgan [1.9.1]
+    - Dotenv [16.3.1]
+    - Passport [0.6.0]
+    - Google OAuth [2.0.0]
+    - Google+ API
+    - YouTube Data API [v3]
+    - Axios [1.5.0]
+    - Bootstrap [5.3.1]
+
 ## User Stories
 
 ### Current (In-Progress)
@@ -68,6 +86,8 @@ Track-Track is a solution to capture your entire music library in one place, reg
     - As a user, I want the application to automatically display a YouTube video for a song on the Track Detail page, if a YouTube link is entered in the Link field.
     - As a user, I want the ability to have other users leave comments and ratings about individual tracks in my music collection.
 
+## Entity Relationship Diagram (ERD)
+![erd](./public/images/wireframes/erd.png)
 
 ## Wireframes
 
@@ -79,6 +99,3 @@ Track-Track is a solution to capture your entire music library in one place, reg
 
 ### Display Songs
 ![display_page](./public/images/wireframes/display_page.png)
-
-## Entity Relationship Diagram (ERD)
-![erd](./public/images/wireframes/erd.png)

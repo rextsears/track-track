@@ -100,7 +100,7 @@ async function deleteTrack(req, res) {
   const trackId = req.params.id;
   try {
     await Tracks.findByIdAndDelete(trackId);
-    res.redirect('/');
+    res.redirect('/trackView/all');
   } catch (error) {
     res.render('error', { message: 'Error deleting track', error });
   }

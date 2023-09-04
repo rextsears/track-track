@@ -3,10 +3,12 @@
   <head>
     <title><%= user %> - All Tracks</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
   </head>
   <body>
     <h1><%= user %> - All Tracks</h1>
     <a href="/">Back to Home</a>
+    <a href="/add/addTrack">Add New Track</a>
     <table>
         <thead>
             <tr>
@@ -18,7 +20,7 @@
               <th>Source</th>
               <th>Discovery</th>
               <th>Link</th>
-              <th>Edit</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -31,8 +33,16 @@
                 <td><%= track.dateAdded.toDateString() %></td>
                 <td><%= track.source.join(', ') %></td>
                 <td><%= track.discovery.join(', ') %></td>
-                <td><a href="<%= track.link %>"><%= track.link %></a></td>
-                <td><a href="/add/editTrack/<%= track._id %>">Edit</a></td>
+                <td>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary" onclick="window.open('<%= track.link %>', '_blank')"><%= track.source %></button>
+                    </div>
+                </td>
+                <td>
+                    <a href="/add/editTrack/<%= track._id %>">
+                        <img src="/images/icons/edit.png" alt="Edit Icon" width="24" height="24">
+                    </a>
+                </td>
               </tr>
             <% }); %>
           </tbody>

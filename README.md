@@ -35,12 +35,12 @@ Track-Track is a solution to capture your entire music library in one place, reg
     - User profiles pages called 'Track-Space,' which can be highly customizable and showcase a user's personal music collection.
 
     - Social media integration.
-    
+
     - Increase functionality of 'Discovery Source' to have it's own schema and view pages. Make the sources specific to each user, with the ability to add greater detail in more fields, etc.
 
 ## User Stories
 
-### Current / MVP
+### Current / In-Progress
     - As a user, I want the application to have an inviting, fun, music-themed design.
 
 ### Ice Box
@@ -53,7 +53,7 @@ Track-Track is a solution to capture your entire music library in one place, reg
     - As a user, I want the ability to add greater detail to my discovery sources and have those details stored in a manner specific to me.
 
 
-### Completed
+### Completed (MVP)
     - As a user, I want the ability to load the application in a web browser.
     - As a user, I want the ability to store music information in a database for the information to be recalled in the future for later use.
     - As a user, I want the ability to edit or otherwise modify music information that was previously entered.

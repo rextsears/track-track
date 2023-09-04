@@ -4,18 +4,39 @@
 
 Track-Track is a solution to capture your entire music library in one place, regardless of the streaming source. The intention of Track-Track is not to play music, but rather to keep track of the music library of a user in an interactive database free of what music services they are currently subscribed to. Additionally, Track-Track aims to capture memories as users add music to their library, keeping track of where the user originally discovered a song.
 
-## User Stories
+## Current Features
+    - Music library information stored in a database.
+    - User login via Google OAuth, giving users the ability to have their own music libraries of which only they can add to or otherwise make modifications to as the active user, and, the ability to make comments on and add ratings to tracks.
+    - Music library database is able to store and keep track of relevant information pertaining to each track, including song Title, Artist, Album, Streaming Source, and Discovery Source.
+    - Track entries can be marked as 'favorites' by users.
+    - Music library information can be displayed in dynamic filters/formats, including chronologically, alphabetically, by Artist, by Streaming Source, by Discovery Source, etc.
+    - Ability to add/edit/delete entries in the music library database.
+    - Ability for users to leave comments and ratings on all tracks in the database.
+    - Ability for users to edit/modify/delete their own comments.
+    - YouTube integration automatically displaying a YouTube player on the Track Detail page when 'YouTube' is selected as the Streaming Source for the track and a valid YouTube link is populated in the 'Link' field.
 
-### Current / MVP
-    - As a user, I want the application to have an inviting, fun, music-themed design.
-
-### Ice Box / Future Enhancements
+## Future Enhancements & Features
     - APIs for all streaming sources & links.
+    - Create playlists, both for individual users and public/shared.
     - Import other music libraries (.csv files, etc.).
     - Export individual user Track-Track music library data (.csv files, etc.).
     - User profiles pages called 'Track-Space,' which can be highly customizable and showcase a user's personal music collection.
     - Social media integration.
     - Increase functionality of 'Discovery Source' to have it's own schema and view pages. Make the sources specific to each user, with the ability to add greater detail in more fields, etc.
+
+## User Stories
+
+### Current / MVP
+    - As a user, I want the application to have an inviting, fun, music-themed design.
+
+### Ice Box
+    - As a user, I want the ability for the application to play music on the track detail page from any added source if I populate the 'link' field with a link to the track in that source.
+    - As a user, I want the ability to create playlists both specific to me and public/shared and have the two be differentiated and convertible.
+    - As a user, I want the ability to import my music data from other music libraries if I upload a .csv file, etc.
+    - As a user, I want the ability to export my Track-Track music library data so that it can be used in other music library applications by having the app make a .csv file, etc., available for download.
+    - As a user, I want the ability to have a user profile page within the application of which I can customize the appearance and showcase my personal music collection.
+    - As a user, I want the ability to have the application integrate with social media applications like Instagram, TikTok, Facebook, Reddit, etc.
+    - As a user, I want the ability to add greater detail to my discovery sources and have those details stored in a manner specific to me.
 
 
 ### Completed

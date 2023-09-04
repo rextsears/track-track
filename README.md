@@ -40,10 +40,10 @@ Track-Track is a solution to capture your entire music library in one place, reg
 
 ## User Stories
 
-### Current / In-Progress
+### Current (In-Progress)
     - As a user, I want the application to have an inviting, fun, music-themed design.
 
-### Ice Box
+### Ice Box (Future Enhancements)
     - As a user, I want the ability for the application to play music on the track detail page from any added source if I populate the 'link' field with a link to the track in that source.
     - As a user, I want the ability to create playlists both specific to me and public/shared and have the two be differentiated and convertible.
     - As a user, I want the ability to import my music data from other music libraries if I upload a .csv file, etc.

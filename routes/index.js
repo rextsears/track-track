@@ -59,7 +59,7 @@ router.post('/streamingSource/add', streamingSourceController.addStreamingSource
 // Route for viewing all streaming sources
 router.get('/streamingSourceView', streamingSourceController.displayAllStreamingSources);
 
-// Route for rendering the "Edit Streaming Source" page
+// Routes for rendering the "Edit Streaming Source" page
 router.get('/streamingSource/edit/:id', streamingSourceController.renderEditStreamingSourcePage);
 router.get('/add/addStreamingSource', streamingSourceController.renderAddStreamingSourcePage);
 

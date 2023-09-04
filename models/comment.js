@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Schema for user comments/ratings
 const commentSchema = new mongoose.Schema({
   user: {
     type: String,
@@ -12,7 +13,7 @@ const commentSchema = new mongoose.Schema({
     max: 5,
     validate: {
       validator: Number.isInteger,
-      message: '{VALUE} is not an integer value for rating.',
+      message: 'Rating must be a whole number from 1-5. {VALUE} is not a valid whole number for rating.',
     },
   },
   text: {

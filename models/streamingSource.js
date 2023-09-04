@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Schema for streaming sources
 const streamingSourceSchema = new mongoose.Schema({
   name: {
     type: String,

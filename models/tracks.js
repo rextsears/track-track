@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Comment = require('./comment');
 
-
+// Schema for main Track-Track music database
 const trackTrack = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,

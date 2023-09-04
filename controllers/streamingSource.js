@@ -1,9 +1,11 @@
 const StreamingSource = require('../models/streamingSource');
 
+// Controller function to render streaming source display page
 async function renderAddStreamingSourcePage(req, res) {
     res.render('add/addStreamingSource');
   };
 
+// Controller function to add a streaming source
 async function addStreamingSource(req, res) {
   const { name } = req.body;
   try {
@@ -21,7 +23,7 @@ async function displayAllStreamingSources(req, res) {
     const streamingSources = await StreamingSource.find();
     res.render('streamingSourceView', { streamingSources });
   } catch (error) {
-    res.render('error', { message: 'Error displaying streaming sources', error });
+    res.render('error', { message: 'Error displaying streaming source(s)', error });
   }
 };
 

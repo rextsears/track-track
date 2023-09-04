@@ -28,7 +28,7 @@ async function addComment(req, res) {
     }
   }
 
-  // Controller function to render the edit comment page
+// Controller function to render the edit comment page
 async function renderEditCommentPage(req, res) {
     const trackId = req.params.trackId;
     const commentId = req.params.commentId;
@@ -100,10 +100,8 @@ async function deleteComment(req, res) {
         throw new Error('Track not found');
       }
   
-      // Find the comment by its _id and remove it
       await Comment.findByIdAndDelete(commentId);
   
-      // Remove the reference to the comment from the track's comments array
       track.comments.pull(commentId);
   
       await track.save();

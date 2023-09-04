@@ -9,7 +9,7 @@ Track-Track is a solution to capture your entire music library in one place, reg
 ### Current / MVP
     - As a user, I want the application to have an inviting, fun, music-themed design.
 
-### Ice Box [Future Enhancements]
+### Ice Box / Future Enhancements
     - APIs for all streaming sources & links.
     - Import other music libraries (.csv files, etc.).
     - Export individual user Track-Track music library data (.csv files, etc.).

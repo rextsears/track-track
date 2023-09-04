@@ -40,7 +40,8 @@ Track-Track is a solution to capture your entire music library in one place, reg
 
 ## User Stories
 
-### Current (In-Progress)
+### Current 
+#### (In-Progress)
     - As a user, I want the application to have an inviting, fun, music-themed design.
 
 ### Ice Box (Future Enhancements)

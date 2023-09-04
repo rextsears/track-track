@@ -4,7 +4,8 @@
 
 Track-Track is a solution to capture your entire music library in one place, regardless of the streaming source. The intention of Track-Track is not to play music, but rather to keep track of the music library of a user in an interactive database free of what music services they are currently subscribed to. Additionally, Track-Track aims to capture memories as users add music to their library, keeping track of where the user originally discovered a song.
 
-## Current Features
+## Features
+### Current Features
     - Music library information stored in a database.
 
     - User login via Google OAuth, giving users the ability to have their own music libraries of which only they can add to or otherwise make modifications to as the active user, and, the ability to make comments on and add ratings to tracks.
@@ -23,7 +24,7 @@ Track-Track is a solution to capture your entire music library in one place, reg
 
     - YouTube integration automatically displaying a YouTube player on the Track Detail page when 'YouTube' is selected as the Streaming Source for the track and a valid YouTube link is populated in the 'Link' field.
 
-## Future Enhancements & Features
+### Future Enhancements & Features
     - APIs for all streaming sources & links.
 
     - Create playlists, both for individual users and public/shared.

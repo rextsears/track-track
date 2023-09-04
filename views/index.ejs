@@ -2,31 +2,53 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="/stylesheets/index.css" rel="stylesheet"> <!-- Add this line -->
   </head>
   <body>
-    <h1><%= title %></h1>
-    
-    <% if (locals.user) { %>
-      <p>Welcome to <%= title %>, <%= locals.user.username %>!</p>
-      <a href="/trackView/userTracks">My Tracks</a>
-      <a href="/auth/logout">Log Out</a>
-    <% } else { %>
-      <p>Welcome, Guest! <a href="/auth/google">Log in</a></p>
-    <% } %>
-    
-    <ul>
-      <li><a href="/add/addTrack">Add New Track</a></li>
-      <!-- <li><a href="/add/editTrack">Edit Track</a></li> -->
-      <li><a href="/trackView/all">All Tracks</a></li>
-      <li><a href="/trackView/bySong">All Tracks by Song A-Z</a></li>
-      <li><a href="/trackView/byDate">All Tracks by Date Added</a></li>
-      <li><a href="/trackView/byArtist">All Tracks by Artist</a></li>
-      <li><a href="/trackView/byStreamSource">All Tracks by Streaming Source</a></li>
-      <li><a href="/trackView/byDiscoSource">All Tracks by Discovery Source</a></li>
-      <li><a href="/add/addStreamingSource">Add Streaming Source</a></li>
-      <li><a href="/streamingSourceView">Streaming Sources</a></li>
-    </ul>
+    <div class="container text-center">
+      <h1><%= title %></h1>
+      
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="navbar-center">
+          <% if (locals.user) { %>
+            <!-- Welcome message centered on the first row -->
+            <p class="navbar-text">Welcome to <%= title %>, <%= locals.user.username %>!</p>
+            
+            <!-- My Tracks and Log Out links side by side on the second row -->
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="/trackView/userTracks">My Tracks</a></li>
+              <li class="nav-item"><a class="nav-link" href="/auth/logout">Log Out</a></li>
+            </ul>
+          <% } else { %>
+            <p class="navbar-text">Welcome, Guest! <a href="/auth/google">Log in</a></p>
+          <% } %>
+        </div>
+      </nav>
+      
+      <!-- Circular "Add New Track" button centered on the page -->
+      <div class="circle-button mx-auto">
+        <a href="/add/addTrack">Add New Track</a>
+      </div>
+      
+      <!-- List of rectangle links centered on the page -->
+      <div class="d-flex flex-column justify-content-center text-center">
+        <a class="wider-rectangle-link mx-auto" href="/trackView/all">All Tracks</a>
+        <a class="wider-rectangle-link mx-auto" href="/trackView/bySong">All Tracks by Song A-Z</a>
+        <a class="wider-rectangle-link mx-auto" href="/trackView/byDate">All Tracks by Date Added</a>
+        <a class="wider-rectangle-link mx-auto" href="/trackView/byArtist">All Tracks by Artist</a>
+        <a class="wider-rectangle-link mx-auto" href="/trackView/byStreamSource">All Tracks by Streaming Source</a>
+        <a class="wider-rectangle-link mx-auto" href="/trackView/byDiscoSource">All Tracks by Discovery Source</a>
+        <a class="wider-rectangle-link mx-auto" href="/add/addStreamingSource">Add Streaming Source</a>
+        <a class="wider-rectangle-link mx-auto" href="/streamingSourceView">Streaming Sources</a>
+      </div>
+      
+      <!-- Your content here -->
+      <ul class="list-unstyled">
+        <!-- ... (other links) ... -->
+      </ul>
+    </div>
   </body>
 </html>

@@ -6,22 +6,36 @@ Track-Track is a solution to capture your entire music library in one place, reg
 
 ## Current Features
     - Music library information stored in a database.
+
     - User login via Google OAuth, giving users the ability to have their own music libraries of which only they can add to or otherwise make modifications to as the active user, and, the ability to make comments on and add ratings to tracks.
+
     - Music library database is able to store and keep track of relevant information pertaining to each track, including song Title, Artist, Album, Streaming Source, and Discovery Source.
+
     - Track entries can be marked as 'favorites' by users.
+
     - Music library information can be displayed in dynamic filters/formats, including chronologically, alphabetically, by Artist, by Streaming Source, by Discovery Source, etc.
+
     - Ability to add/edit/delete entries in the music library database.
+
     - Ability for users to leave comments and ratings on all tracks in the database.
+
     - Ability for users to edit/modify/delete their own comments.
+
     - YouTube integration automatically displaying a YouTube player on the Track Detail page when 'YouTube' is selected as the Streaming Source for the track and a valid YouTube link is populated in the 'Link' field.
 
 ## Future Enhancements & Features
     - APIs for all streaming sources & links.
+
     - Create playlists, both for individual users and public/shared.
+
     - Import other music libraries (.csv files, etc.).
+
     - Export individual user Track-Track music library data (.csv files, etc.).
+
     - User profiles pages called 'Track-Space,' which can be highly customizable and showcase a user's personal music collection.
+
     - Social media integration.
+    
     - Increase functionality of 'Discovery Source' to have it's own schema and view pages. Make the sources specific to each user, with the ability to add greater detail in more fields, etc.
 
 ## User Stories

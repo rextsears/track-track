@@ -1,4 +1,3 @@
-/* Center content vertically and horizontally */
 body {
     display: flex;
     flex-direction: column;
@@ -6,24 +5,21 @@ body {
     justify-content: center;
     height: 100vh;
   }
-  
-  /* Center content horizontally within the navbar */
+
   .navbar-center {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  
-  /* Center the navbar horizontally on the page */
+
   .navbar {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  
-  /* Style for the circular button */
+
   .circle-button {
     display: flex;
     align-items: center;
@@ -35,21 +31,18 @@ body {
     border-radius: 50%;
     text-align: center;
     text-decoration: none;
-    /* Center the button horizontally */
     margin: 0 auto;
   }
-  
-  /* Style for the "Add New Track" link */
+
   .circle-button a {
     color: #fff;
     text-decoration: none;
   }
-  
-  /* Style for the rectangle links */
+
   .rectangle-link {
     width: 200px;
     height: 50px;
-    margin: 10px auto; /* Center horizontally and add margin between links */
+    margin: 10px auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,75 +51,78 @@ body {
     text-decoration: none;
   }
 
-  /* Style for the My Tracks and Log Out links in the nav bar */
 .navbar-nav .nav-item {
-    margin-right: 10px; /* Adjust the margin as needed */
+    margin-right: 10px;
   }
   
-  .navbar-nav .nav-item:last-child {
-    margin-right: 0; /* Remove margin for the last item */
+.navbar-nav .nav-item:last-child {
+    margin-right: 0;
   }
-  
-  .navbar-nav .nav-link {
-    padding: 10px 20px; /* Adjust padding as needed */
-    border: 1px solid #ccc; /* Add a border */
-    border-radius: 5px; /* Rounded corners */
+
+.navbar-nav .nav-link {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     text-align: center;
     text-decoration: none;
-    color: #333; /* Text color */
-    background-color: #fff; /* Background color */
+    color: #333;
+    background-color: #fff;
     transition: background-color 0.3s ease;
   }
   
-  .navbar-nav .nav-link:hover {
-    background-color: #f0f0f0; /* Change background color on hover */
+.navbar-nav .nav-link:hover {
+    background-color: #f0f0f0;
   }
-  
-  /* Style for the circular "Add New Track" button */
+
   .circle-button {
-    margin-top: 20px; /* Adjust the margin as needed */
+    margin-top: 20px;
   }
   
-  .circle-button a {
+.circle-button a {
     display: inline-block;
-    padding: 20px 40px; /* Adjust padding as needed */
-    border-radius: 50%; /* Circular shape */
-    background-color: #007bff; /* Button background color */
-    color: #fff; /* Button text color */
+    padding: 20px 40px;
+    margin: 30px 0 30px 0;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
   }
-  
+
   .circle-button a:hover {
-    background-color: #0056b3; /* Change background color on hover */
+    background-color: #0056b3;
   }
-  
-  /* Style for the rectangular links */
+
   .rectangle-link {
     display: inline-block;
-    margin: 10px 0; /* Adjust margin as needed */
-    padding: 10px 20px; /* Adjust padding as needed */
-    border: 1px solid #ccc; /* Add a border */
-    border-radius: 5px; /* Rounded corners */
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     text-align: center;
     text-decoration: none;
-    color: #333; /* Text color */
-    background-color: #fff; /* Background color */
+    color: #333;
+    background-color: #fff;
     transition: background-color 0.3s ease;
   }
   
   .rectangle-link:hover {
-    background-color: #f0f0f0; /* Change background color on hover */
+    background-color: #f0f0f0;
   }
+
   .wider-rectangle-link {
-    width: 200px; /* Adjust the width to your preference */
+    width: 200px;
     padding: 10px;
     text-align: center;
     margin: 5px;
-    background-color: #f0f0f0; /* Background color for the rectangles */
-    border: 1px solid #ccc; /* Border for the rectangles */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline from links */
-    color: #333; /* Text color */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .d-flex.flex-column.justify-content-center {
+    margin-top: 20px;
   }

@@ -6,7 +6,16 @@ Track-Track is a solution to capture your entire music library in one place, reg
 
 ## Getting Started
 
-Launch the app here!
+Launch [Track-Track here](https://track-track.fly.dev)!
+
+### Home Page
+![home](./public/images/screenshots/home.png)
+
+### Add New Song
+![add_new](./public/images/screenshots/add_new.png)
+
+### Display All Tracks
+![all_tracks](./public/images/screenshots/all_tracks.png)
 
 ## Features
 ### Current Features

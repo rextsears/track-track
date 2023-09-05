@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect('mongodb+srv://tomsears90:NTryYQCLLgdtNH6F@cluster0.41oubkj.mongodb.net/trackTrack?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })

@@ -6,9 +6,9 @@ const User = require('./models/User');
 passport.use(
   new GoogleStrategy(
     {
-        clientID: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: 'http://localhost:3000/auth/google/callback',
+        clientID: '805358082610-04at6tctich63t93tupr0m4upqr4dm2d.apps.googleusercontent.com',
+        clientSecret: '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',
+        callbackURL: 'https://track-track.fly.dev/auth/google/callback',
     },
     async (accessToken, refreshToken, profile, done) => {
       try {

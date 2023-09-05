@@ -1,7 +1,7 @@
 const axios = require('axios');
 require('dotenv').config();
 
-const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
+const YOUTUBE_API_KEY = 'AIzaSyBef5ik5OqnP0pYyWBiUM1NW9HXfV9-Usk';
 
 async function getYoutubeVideoInfo(videoId) {
   try {

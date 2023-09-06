@@ -19,11 +19,11 @@ const app = express();
 // Configure Google OAuth user session
 app.use(
   session({
-    secret: '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',
+    secret: process.env.GOOGLE_OAUTH_SECRET,
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
-      mongoUrl: 'mongodb+srv://tomsears90:NTryYQCLLgdtNH6F@cluster0.41oubkj.mongodb.net/trackTrack?retryWrites=true&w=majority',
+      mongoUrl: process.env.DATABASE_URL,
       mongooseConnection: mongoose.connection,
     }),
   })

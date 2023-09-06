@@ -17,6 +17,9 @@ Launch [Track-Track here](https://track-track.fly.dev)!
 ### Display All Tracks
 ![all_tracks](./public/images/screenshots/all_tracks.png)
 
+### Track Detail
+![track_detail](./public/images/screenshots/track_detail.png)
+
 ## Features
 ### Current Features
     - Music library information stored in a database.

@@ -8,7 +8,7 @@ Track-Track is a solution to capture your entire music library in one place, reg
 
 Launch [Track-Track here](https://track-track.fly.dev)!
 
-### Screenshots
+## Screenshots
 ### Home Page
 ![home](./public/images/screenshots/home.png)
 

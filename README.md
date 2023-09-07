@@ -14,15 +14,15 @@ Launch [Track-Track here](https://track-track.fly.dev)!
 
 ### App Functions
 ![add_new](./public/images/screenshots/add_new.png)
-
+###
 ![all_tracks](./public/images/screenshots/all_tracks.png)
-
+###
 ![track_detail](./public/images/screenshots/track_detail.png)
-
+###
 ![edit_track](./public/images/screenshots/edit_track.png)
-
+###
 ![streaming_sources](./public/images/screenshots/streaming_sources.png)
-
+###
 ![add_streaming_source](./public/images/screenshots/add_streaming_source.png)
 
 ## Features

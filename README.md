@@ -12,7 +12,7 @@
 ###
 ###
 ## Features
-### Current Release [v1.0.0] Features
+### Current Release _[v1.0.0]_ Features
 - Basic, user-friendly, UI utilizing _Bootstrap_.
 
 - Music library information stored in a _MongoDB_ database via API.

@@ -37,6 +37,8 @@
 
 - YouTube integration automatically displaying a YouTube player on the 'Track Detail' page when 'YouTube' is selected as the 'Streaming Source' for the track and a valid YouTube link is populated in the 'Link' field.
 
+- Deployed via _Fly.io_.
+
 ### Future Enhancements & Features
 - APIs for all streaming sources & links.
 

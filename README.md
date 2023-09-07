@@ -9,25 +9,6 @@ Track-Track is a solution to capture your entire music library in one place, reg
 Launch [Track-Track here](https://track-track.fly.dev)!
 
 ###
-## Screenshots
-### Home Page
-![home](./public/images/screenshots/home.png)
-
-### App Functions
-##
-![add_new](./public/images/screenshots/add_new.png)
-##
-![all_tracks](./public/images/screenshots/all_tracks.png)
-##
-![track_detail](./public/images/screenshots/track_detail.png)
-##
-![edit_track](./public/images/screenshots/edit_track.png)
-##
-![streaming_sources](./public/images/screenshots/streaming_sources.png)
-##
-![add_streaming_source](./public/images/screenshots/add_streaming_source.png)
-##
-
 ## Features
 ### Current Features
     - Music library information stored in a database.
@@ -77,6 +58,29 @@ Launch [Track-Track here](https://track-track.fly.dev)!
     - Axios [1.5.0]
     - Bootstrap [5.3.1]
 
+## Entity Relationship Diagram (ERD)
+![erd](./public/images/wireframes/erd.png)
+###
+
+## Screenshots
+### Home Page
+![home](./public/images/screenshots/home.png)
+
+### App Functions
+##
+![add_new](./public/images/screenshots/add_new.png)
+##
+![all_tracks](./public/images/screenshots/all_tracks.png)
+##
+![track_detail](./public/images/screenshots/track_detail.png)
+##
+![edit_track](./public/images/screenshots/edit_track.png)
+##
+![streaming_sources](./public/images/screenshots/streaming_sources.png)
+##
+![add_streaming_source](./public/images/screenshots/add_streaming_source.png)
+##
+
 ## User Stories
 
 ### Current (In-Progress)
@@ -106,9 +110,6 @@ Launch [Track-Track here](https://track-track.fly.dev)!
     - As a user, I want the application to automatically display a YouTube video for a song on the Track Detail page, if a YouTube link is entered in the Link field.
     - As a user, I want the ability to have other users leave comments and ratings about individual tracks in my music collection.
 
-## Entity Relationship Diagram (ERD)
-![erd](./public/images/wireframes/erd.png)
-###
 ## Wireframes
 
 ### Main Landing Page

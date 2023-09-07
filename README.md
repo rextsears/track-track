@@ -113,9 +113,9 @@ Launch [Track-Track here](https://track-track.fly.dev)!
 
 ### Main Landing Page
 ![landing_page](./public/images/wireframes/landing_page.png)
-
+##
 ### Add New Song
 ![add_new](./public/images/wireframes/add_new.png)
-
+##
 ### Display Songs
 ![display_page](./public/images/wireframes/display_page.png)

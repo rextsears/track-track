@@ -2,34 +2,34 @@
 
 ## Overview
 
-Track-Track is a solution to capture your entire music library in one place, regardless of the streaming source. The intention of Track-Track is not to play music, but rather to keep track of the music library of a user in an interactive database free of what music services they are currently subscribed to. Additionally, Track-Track aims to capture memories as users add music to their library, keeping track of where the user originally discovered a song.
+_Track-Track_ is a solution to capture your entire music library in one place, regardless of the streaming source. The intention of _Track-Track_ is not to play music, but rather to keep track of the music library of a user in an interactive database free of what music services they are currently subscribed to. Additionally, _Track-Track_ aims to capture memories as users add music to their library, keeping track of where the user originally discovered a song.
 
 ## Getting Started
 
-Launch [Track-Track here](https://track-track.fly.dev)!
+**Launch [Track-Track here](https://track-track.fly.dev)!**
 
 ###
 ## Features
 ### Current Features
-- Basic, user-friendly, UI utilizing Bootstrap.
+- Basic, user-friendly, UI utilizing _Bootstrap_.
 
-- Music library information stored in a MongoDB database via API.
+- Music library information stored in a _MongoDB_ database via API.
 
-- Music library database is able to store relevant information pertaining to each track, including song Title, Artist, Album, Streaming Source, Discovery Source, and Link.
+- Music library database is able to store relevant information pertaining to each track, including song _Title_, _Artist_, _Album_, _Streaming Source_, _Discovery Source_, and _Link_.
 
-- Track entries can be marked as 'favorites' by users.
+- Track entries can be marked as '_favorites_' by users.
 
-- Ability to add/edit/delete entries in the music library database.
+- Ability to _add/edit/delete_ entries in the music library database.
 
-- Streaming sources can be added/edited/deleted by users in a dedicated schema.
+- Streaming sources can be _added/edited/deleted_ by users in a _dedicated schema_.
 
-- Music library information can be displayed in dynamic filters/formats, including chronologically, alphabetically, by Artist, by Streaming Source, by Discovery Source, etc.
+- Music library information can be displayed in _dynamic filters/formats_, including chronologically, alphabetically, by Artist, by Streaming Source, by Discovery Source, etc.
 
-- Ability for users to leave comments and ratings on all tracks in the database.
+- Ability for users to leave _comments and ratings_ on all tracks in the database.
 
-- Ability for users to edit/modify/delete their own comments.
+- Ability for users to _edit/modify/delete_ their own comments.
 
-- User login via Google OAuth, giving users the ability to have their own user profile and experience in Track-Track.
+- User login via _Google OAuth_, giving users the ability to have their own user profile and experience in Track-Track.
     
 - User profiles enabling users to have their own music libraries of which only they can add to, make modifications to, or otherwise delete from as the active user, and, the ability to make comments on and add ratings to tracks.
 

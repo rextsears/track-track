@@ -105,7 +105,7 @@ Launch [Track-Track here](https://track-track.fly.dev)!
 
 ## Entity Relationship Diagram (ERD)
 ![erd](./public/images/wireframes/erd.png)
-
+###
 ## Wireframes
 
 ### Main Landing Page

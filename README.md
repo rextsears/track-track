@@ -3,6 +3,7 @@
 ## Overview
 
 **_Track-Track_** is a solution to capture your entire music library in one place, regardless of the streaming source. The intention of _Track-Track_ is not to play music, but rather to keep track of the music library of a user in an interactive database free of what music services they are currently subscribed to. Additionally, _Track-Track_ aims to capture memories as users add music to their library, keeping track of where the user originally discovered a song.
+###
 
 ## Getting Started
 

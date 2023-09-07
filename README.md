@@ -51,18 +51,18 @@ Launch [Track-Track here](https://track-track.fly.dev)!
 - Increase functionality of 'Discovery Source' to have it's own schema and view pages. Make the sources specific to each user, with the ability to add greater detail in more fields, etc.
 
 ### Technologies Used
-- HTML, CSS, JS
-- EJS [4.18.2]
-- MongoDB [5.8.1]
-- Mongoose [7.5.0]
-- Morgan [1.9.1]
-- Dotenv [16.3.1]
-- Passport [0.6.0]
-- Google OAuth [2.0.0]
-- Google+ API
-- YouTube Data API [v3]
-- Axios [1.5.0]
-- Bootstrap [5.3.1]
+    - HTML, CSS, JS
+    - EJS [4.18.2]
+    - MongoDB [5.8.1]
+    - Mongoose [7.5.0]
+    - Morgan [1.9.1]
+    - Dotenv [16.3.1]
+    - Passport [0.6.0]
+    - Google OAuth [2.0.0]
+    - Google+ API
+    - YouTube Data API [v3]
+    - Axios [1.5.0]
+    - Bootstrap [5.3.1]
 
 ## Entity Relationship Diagram (ERD)
 ![erd](./public/images/wireframes/erd.png)

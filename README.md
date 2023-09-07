@@ -71,10 +71,10 @@
 ###
 
 ## Screenshots
-### Home Page
+### _Home Page_
 ![home](./public/images/screenshots/home.png)
 
-### App Functions
+### _App Functions_
 ##
 ![add_new](./public/images/screenshots/add_new.png)
 ##

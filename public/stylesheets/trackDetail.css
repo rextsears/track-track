@@ -8,3 +8,21 @@ body {
 h1 {
     font-size: 60px;
 }
+
+h3 {
+    font-size: 40px;
+    background-color: white;
+}
+
+.list-unstyled {
+    font-size: 25px;
+}
+
+.slabel {
+    font-weight: bold;
+}
+
+.comments-list {
+    background-color: white;
+    font-size: 20px;
+}

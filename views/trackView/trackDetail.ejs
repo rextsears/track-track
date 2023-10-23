@@ -7,11 +7,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-  <link href="/stylesheets/all.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+  <link href="/stylesheets/trackDetail.css" rel="stylesheet">
 </head>
 <body>
   <h1>Track Detail - <%= track.song %> by <%= track.artist %></h1>
-  <ul>
+  <ul class="list-unstyled">
     <li><strong>Song:</strong> <%= track.song %></li>
     <li><strong>Artist:</strong> <%= track.artist %></li>
     <li><strong>Album:</strong> <%= track.album %></li>
@@ -65,7 +67,7 @@
     </form>
   <% } %>
   
-  <a href="/trackView/all">Back to All Tracks</a>
-  <a href="/">Back to Home</a>
+  <a href="/trackView/all" class="btn btn-light">Back to All Tracks</a>
+  <a href="/" class="btn btn-primary">Back to Home</a>
 </body>
 </html>

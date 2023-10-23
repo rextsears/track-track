@@ -1,128 +1,123 @@
+/* Reset some Bootstrap button styles */
+.btn-primary,
+.btn-danger {
+  color: #fff !important;
+  font-weight: bold !important;
+}
+
+/* Global styles */
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Titillium Web', sans-serif;
+}
 
-  .navbar-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+/* Navbar styles */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
 
-  .navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+/* Centered content styles */
+.navbar-center,
+.circle-button,
+.rectangle-link,
+.d-flex.flex-column.justify-content-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  .circle-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 100px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
-    margin: 0 auto;
-  }
+/* Circle button styles */
+.circle-button {
+  width: 200px;
+  height: 200px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: #fff 5px dashed;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
 
-  .circle-button a {
-    color: #fff;
-    text-decoration: none;
-  }
+.circle-button a {
+  color: #fff;
+  text-decoration: none;
+}
 
-  .rectangle-link {
-    width: 200px;
-    height: 50px;
-    margin: 10px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-  }
+/* Rectangle link styles */
+.rectangle-link,
+.wider-rectangle-link {
+  width: 200px;
+  height: 50px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff;
+  color: black;
+  font-weight: bold;
+  font-size: 17px;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
 
+/* Wider rectangle link styles */
+.wider-rectangle-link {
+  width: 220px;
+  height: 60px;
+  padding: 10px;
+  margin: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Navbar link styles */
 .navbar-nav .nav-item {
-    margin-right: 10px;
-  }
-  
+  margin-right: 10px;
+}
+
 .navbar-nav .nav-item:last-child {
-    margin-right: 0;
-  }
+  margin-right: 0;
+}
 
 .navbar-nav .nav-link {
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    background-color: #fff;
-    transition: background-color 0.3s ease;
-  }
-  
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
 .navbar-nav .nav-link:hover {
-    background-color: #f0f0f0;
-  }
+  background-color: #f0f0f0;
+}
 
-  .circle-button {
-    margin-top: 20px;
-  }
-  
-.circle-button a {
-    display: inline-block;
-    padding: 20px 40px;
-    margin: 30px 0 30px 0;
-    border-radius: 50%;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
+/* Hover styles for circle buttons */
+.circle-button a:hover,
+.rectangle-link:hover {
+  background-color: #0056b3;
+}
 
-  .circle-button a:hover {
-    background-color: #0056b3;
-  }
-
-  .rectangle-link {
-    display: inline-block;
-    margin: 10px 0;
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    background-color: #fff;
-    transition: background-color 0.3s ease;
-  }
-  
-  .rectangle-link:hover {
-    background-color: #f0f0f0;
-  }
-
-  .wider-rectangle-link {
-    width: 200px;
-    padding: 10px;
-    text-align: center;
-    margin: 5px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .d-flex.flex-column.justify-content-center {
-    margin-top: 20px;
-  }
+h1 {
+  font-size: 60px;
+}

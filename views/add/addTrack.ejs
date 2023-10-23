@@ -2,39 +2,70 @@
 <html>
 <head>
   <title>Add New Track</title>
+  <link href="/stylesheets/addTrack.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
 </head>
-<body>
-  <h1>Add New Track</h1>
-  <form action="/add/addTrack" method="POST">
-    <label for="song">Song:</label>
-    <input type="text" name="song" required><br>
-    <label for="artist">Artist:</label>
-    <input type="text" name="artist" required><br>
-    <label for="album">Album:</label>
-    <input type="text" name="album"><br>
-    <label for="dateAdded">Date Added:</label>
-    <input type="date" name="dateAdded" required><br>
-    <label for="favorite">Favorite:</label>
-        <select name="favorite">
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-    </select><br>
-    <label for="source">Streaming Source:</label>
-    <select name="source">
-      <% streamingSources.forEach(source => { %>
-        <option value="<%= source.name %>"><%= source.name %></option>
-      <% }); %>
-    </select><br>
-    <a href="/add/addStreamingSource">Add New Streaming Source</a><br>
-    <label for="discovery">Discovery Source:</label>
-    <input type="text" name="discovery"><br>
-    <label for="link">Link:</label>
-    <input type="url" name="link"><br>
-    <input type="submit" value="Add Track">
-  </form>
-  <button type="button" onclick="history.back()">Cancel</button>
+<body class="bg-light">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-6 offset-md-3 bg-white p-5 rounded shadow">
+        <h1 class="mb-4 text-center">Add New Track</h1>
+        <form action="/add/addTrack" method="POST">
+          <div class="mb-3 form-group">
+            <label for="song" class="form-label">Song Title:</label>
+            <input type="text" name="song" class="form-control" required>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="artist" class="form-label">Artist:</label>
+            <input type="text" name="artist" class="form-control" required>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="album" class="form-label">Album:</label>
+            <input type="text" name="album" class="form-control" required>
+          </div>
+          <div class="mb-3 form-group">
+            <label for="dateAdded" class="form-label">Date Added:</label>
+            <input type="date" name="dateAdded" class="form-control" required>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label for="favorite" class="form-label">Favorite:</label>
+            </div>
+            <div class="col-auto">
+              <div class="form-check form-switch">
+                <input type="checkbox" name="favorite" class="form-check-input" id="favorite">
+                <label class="form-check-label" for="favorite"></label>
+              </div>
+            </div>
+          </div>                   
+          <div class="mb-3 form-group">
+            <label for="source" class="form-label">Streaming Source:</label>
+            <select name="source" class="custom-select">
+              <% streamingSources.forEach(source => { %>
+                <option value="<%= source.name %>"><%= source.name %></option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="mb-3 form-group">
+            <button type="button" class="btn btn-primary" onclick="window.location.href='/add/addStreamingSource'">Add New Streaming Source</button>
+          </div>          
+          <div class="mb-3 form-group">
+            <label for="discovery" class="form-label">Discovery Source:</label>
+            <input type="text" name="discovery" class="form-control">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="link" class="form-label">Link:</label>
+            <input type="url" name="link" class="form-control">
+          <div class="mb-3 form-group">
+            <button type="submit" class="btn btn-primary">Add Track</button>
+            <button type="button" class="btn btn-secondary ml-2" onclick="history.back()">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

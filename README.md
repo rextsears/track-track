@@ -8,7 +8,7 @@
 ## Getting Started
 ###
 ###
-**Launch [Track-Track here](https://track-track.fly.dev)!**
+**Launch Track-Track [here](https://track-track.fly.dev)!**
 ###
 ###
 ## Features

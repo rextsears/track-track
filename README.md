@@ -1,4 +1,4 @@
-# Track-Track
+![README_title](./public/images/screenshots/README_title.png)
 
 ## Overview
 
@@ -94,7 +94,7 @@
 ## User Stories
 
 ### Current (In-Progress)
-    - As a user, I want the application to have an inviting, fun, music-themed design.
+    - (none)
 
 ### Ice Box (Future Enhancements)
     - As a user, I want the ability for the application to play music on the track detail page from any added source if I populate the 'link' field with a link to the track in that source.
@@ -108,6 +108,7 @@
 
 ### Completed (MVP)
     - As a user, I want the ability to load the application in a web browser.
+    - As a user, I want the application to have an inviting, fun, music-themed design.
     - As a user, I want the ability to store music information in a database for the information to be recalled in the future for later use.
     - As a user, I want the ability to edit or otherwise modify music information that was previously entered.
     - As a user, I want the ability to delete music information that was previously entered.

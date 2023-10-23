@@ -15,9 +15,11 @@
     <link href="/stylesheets/all.css" rel="stylesheet">
   </head>
   <body>
-    <h1><%= user %> - All Tracks</h1>
-    <a href="/">Back to Home</a>
-    <a href="/add/addTrack">Add New Track</a>
+    <h1><%= user %> - My Tracks</h1>
+    <a href="/" class="btn btn-light">
+        <i class="bi bi-house-door-fill"></i> Back to Home
+    </a>
+    <a href="/add/addTrack" class="btn btn-primary">+ Add New Track</a>
     <table class="table table-striped table-hover">
         <thead>
             <tr>

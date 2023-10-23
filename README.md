@@ -82,6 +82,8 @@
 ##
 ![all_tracks](./public/images/screenshots/all_tracks.png)
 ##
+![user_tracks](./public/images/screenshots/user_tracks.png)
+##
 ![track_detail](./public/images/screenshots/track_detail.png)
 ##
 ![edit_track](./public/images/screenshots/edit_track.png)

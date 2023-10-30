@@ -37,11 +37,11 @@
             </div>
             <div class="col-auto">
               <div class="form-check form-switch">
-                <input type="checkbox" name="favorite" class="form-check-input" id="favorite">
+                <input type="checkbox" name="favorite" class="form-check-input" id="favorite" value="true">
                 <label class="form-check-label" for="favorite"></label>
               </div>
             </div>
-          </div>                   
+          </div>                                  
           <div class="mb-3 form-group">
             <label for="source" class="form-label">Streaming Source:</label>
             <select name="source" class="custom-select">
@@ -66,6 +66,9 @@
         </form>
       </div>
     </div>
+    <div class="streamloggeduser">
+      <% if (locals.user) { %>Signed in as <%= locals.user.username %><% } %>
+  </div>
   </div>
 </body>
 </html>

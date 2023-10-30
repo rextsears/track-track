@@ -16,10 +16,17 @@
   </head>
 <body>
     <h1>All Tracks</h1>
-    <a href="/" class="btn btn-light">
-        <i class="bi bi-house-door-fill"></i> Back to Home
-    </a>
-    <a href="/add/addTrack" class="btn btn-primary">+ Add New Track</a>
+    <div class="button-container">
+        <div class="left-buttons">
+            <a href="/" class="btn btn-light">
+                <i class="bi bi-house-door-fill"></i> Back to Home
+            </a>
+            <a href="/add/addTrack" class="btn btn-primary">+ Add New Track</a>
+        </div>
+        <div class="loggeduser">
+            <% if (locals.user) { %>Signed in as <%= locals.user.username %><% } %>
+        </div>
+    </div>      
     <table class="table table-striped table-hover">
         <thead>
             <tr>

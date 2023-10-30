@@ -27,13 +27,19 @@ async function renderAddNewTrackPage(req, res) {
 // Controller function to handle the submission of a new track from the "Add New Track" page to the database
 async function addNewTrack(req, res) {
   const { song, artist, album, dateAdded, favorite, source, discovery, link } = req.body;
+  console.log('Request Body:', req.body);
+
+  // Convert the "favorite" value to a boolean for the slider input
+  const isFavorite = favorite === 'true';
+  console.log('Favorite:', favorite);
+
   try {
     const newTrack = new Tracks({
       song,
       artist,
       album,
       dateAdded,
-      favorite,
+      favorite: isFavorite,
       source: [source],
       discovery,
       link,
@@ -54,15 +60,18 @@ async function checkTrackOwnership(req, res, next) {
     const track = await Tracks.findById(trackId);
     
     if (!track) {
+      console.log('Track not found');
       throw new Error('Track not found');
     }
     
     if (track.user.toString() !== req.user._id.toString()) {
+      console.log('Unauthorized');
       throw new Error('Unauthorized');
     }
     
     next();
   } catch (error) {
+    console.log('Error:', error);
     res.render('error', { message: 'Unauthorized', error });
   }
 }
@@ -83,14 +92,15 @@ async function renderEditTrackPage(req, res) {
 async function editTrack(req, res) {
   const trackId = req.params.id;
   const updatedTrackData = req.body;
+  console.log('Request Body:', req.body);
 
-  updatedTrackData.favorite = updatedTrackData.favorite === 'true';
+  // Convert the "favorite" value to a boolean
+  //updatedTrackData.favorite = updatedTrackData.favorite === 'true';
 
   try {
     await Tracks.findByIdAndUpdate(trackId, { ...updatedTrackData, user: req.user._id });
     const allTracks = await Tracks.find();
-    res.render('trackView/all', { tracks: allTracks });
-    res.redirect('trackView/all');
+    res.redirect('/trackView/all'); // Redirect to the track list page after editing
   } catch (error) {
     res.render('error', { message: 'Error editing track', error });
   }
@@ -100,9 +110,26 @@ async function editTrack(req, res) {
 async function deleteTrack(req, res) {
   const trackId = req.params.id;
   try {
+    const track = await Tracks.findById(trackId);
+
+    if (!track) {
+      console.log('Track not found');
+      throw new Error('Track not found');
+    }
+
+    // Check track ownership again (just to be safe)
+    if (track.user.toString() !== req.user._id.toString()) {
+      console.log('Unauthorized');
+      throw new Error('Unauthorized');
+    }
+
     await Tracks.findByIdAndDelete(trackId);
-    res.redirect('/trackView/all');
+    
+    // Render a specific page after deletion (e.g., track listing page)
+    const allTracks = await Tracks.find();
+    res.render('trackView/all', { tracks: allTracks });
   } catch (error) {
+    console.log('Error:', error);
     res.render('error', { message: 'Error deleting track', error });
   }
 }

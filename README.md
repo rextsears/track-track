@@ -75,6 +75,9 @@
 ## Screenshots
 ### _Home Page_
 ![home](./public/images/screenshots/home.png)
+##
+### _Home Page - User Logged In_
+![home_loggedin](./public/images/screenshots/home_loggedin.png)
 
 ### _App Functions_
 ##

@@ -16,28 +16,52 @@
   </head>
   <body>
     <h1><%= user %> - My Tracks</h1>
+    <div class="mytracks-left-buttons">
     <a href="/" class="btn btn-light">
         <i class="bi bi-house-door-fill"></i> Back to Home
     </a>
-    <a href="/add/addTrack" class="btn btn-primary">+ Add New Track</a>
+    <a href="/add/addTrack" class="btn btn-primary"><strong>+ Add New Track</strong></a>
+</div>
     <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-              <th>Favorite</th>
-              <th>Song</th>
-              <th>Artist</th>
-              <th>Album</th>
-              <th>Date Added</th>
-              <th>Source</th>
-              <th>Discovery</th>
-              <th>Listen</th>
-              <th></th>
-            </tr>
-          </thead>
+      <thead>
+        <tr id="table-top">
+            <th class="fav-width">
+                <img src="/images/icons/favheading.png" alt="Favorite Heading Icon" width="24" height="24">
+            </th>
+            <th class="track-width">
+                <img id="imagepad" src="/images/icons/track.jpg" alt="Track Icon" width="20" height="20">
+                Track
+            </th>
+            <th class="track-width">
+                <img id="imagepad" src="/images/icons/artist.png" alt="Artist Icon" width="20" height="20">
+                Artist
+            </th>
+            <th class="track-width">
+                <img id="imagepad" src="/images/icons/album.png" alt="Album Icon" width="20" height="20">
+                Album
+            </th>
+            <th class="date-width">
+                <img id="imagepad" src="/images/icons/cal.png" alt="Calendar Icon" width="20" height="20">
+                Date Added
+            </th>
+            <th>
+                <img id="imagepad" src="/images/icons/source.png" alt="Source Icon" width="20" height="20">
+                Source
+            </th>
+            <th>
+                <img id="imagepad" src="/images/icons/disco.png" alt="Discovery Icon" width="17" height="17">
+                Disc.
+            </th>
+            <th class="listen-column">
+                <img src="/images/icons/headphones.png" alt="Headphones Icon" width="22" height="22">
+            </th>
+            <th><img src="/images/icons/edithead.png" alt="Edit Heading Icon" width="24" height="24"></th>
+        </tr>
+    </thead>
           <tbody>
             <% tracks.forEach(track => { %>
               <tr>
-                <td>
+                <td class="fav-width">
                     <% if (track.favorite) { %>
                         <img src="/images/icons/fav.png" alt="Favorite Icon" width="24" height="24">
                     <% } else { %>
@@ -47,10 +71,10 @@
                 <td><a href="/trackView/track/<%= track._id %>"><strong><%= track.song %></strong></a></td>
                 <td><%= track.artist %></td>
                 <td><%= track.album %></td>
-                <td><%= track.dateAdded.toDateString() %></td>
+                <td class="date-width"><%= track.dateAdded.toDateString() %></td>
                 <td><%= track.source.join(', ') %></td>
-                <td><%= track.discovery.join(', ') %></td>
-                <td>
+                <td class="wrap-text"><%= track.discovery.join(', ') %></td>
+                <td class="listen-column">
                     <div class="d-flex justify-content-between">
                         <button class="btn btn-primary" onclick="window.open('<%= track.link %>', '_blank')"><%= track.source %></button>
                     </div>

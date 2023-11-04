@@ -7,7 +7,7 @@ const moment = require('moment');
 // Controller function to display all tracks and render on the "All Tracks" page
 async function displayAllTracks(req, res) {
   try {
-    const allTracks = await Tracks.find();
+    const allTracks = await Tracks.find().populate('user'); // Populate the 'user' field
     res.render('trackView/all', { tracks: allTracks });
   } catch (error) {
     res.render('error', { message: 'Error displaying all tracks', error });

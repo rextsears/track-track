@@ -7,19 +7,201 @@ body {
 
 h1 {
     font-size: 60px;
+    padding-left: 5px;
 }
 
 .button-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-image: linear-gradient(to right, white, white, #f0f2f3, #d9dce1, #f0f2f3, white, white);
+    margin-bottom: 20px;
 }
 
 .left-buttons {
     display: flex;
     align-items: center;
+    background-color: white;
+    margin-left: 5px;
+}
+
+.mytracks-left-buttons {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to right, white, white, #f0f2f3, #f0f2f3, #f0f2f3, #d9dce1);
+}
+
+.gsi-material-button {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border: 2px solid #747775;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #1f1f1f;
+    cursor: pointer;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 15px;
+    height: 30px;
+    letter-spacing: 0.25px;
+    outline: none;
+    overflow: hidden;
+    padding: 0 12px;
+    margin-right: 10px;
+    text-align: center;
+    -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
+    transition: background-color .218s, border-color .218s, box-shadow .218s;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 105px;
+  }
+  
+  .gsi-material-button .gsi-material-button-icon {
+    height: 20px;
+    margin-right: 12px;
+    min-width: 20px;
+    width: 20px;
+  }
+  
+  .gsi-material-button .gsi-material-button-content-wrapper {
+    -webkit-align-items: center;
+    align-items: center;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+  }
+  
+  .gsi-material-button .gsi-material-button-contents {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+  }
+
+#google-sign-in-button {
+    margin-left: 3px;
+}
+
+.guestmessage {
+    color: #007bff;
+    background-color: transparent;
+    background-image: none;
+    border-radius: 5px;
+    height: 40px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+#messagepad {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .streamloggeduser {
     margin-top: 10px;
+    vertical-align: middle;
+}
+
+.loggeduser {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#logout {
+    margin-left: 12px;
+    background-color: #fff;
+    width: 85px;
+    letter-spacing: 0.25px;
+}
+
+#logout:hover {
+    color: #515151;
+    background-color: #f4f4f4;
+    width: 85px;
+}
+.wrap-text {
+    word-wrap: break-word;
+    max-width: 75px;
+    white-space: normal;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+.fav-width {
+    max-width: 50px;
+    white-space: normal;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+.track-width {
+    word-wrap: break-word;
+    max-width: 125px;
+    min-width: 125px;
+    white-space: normal;
+    vertical-align: middle;
+  }
+
+.date-width {
+    word-wrap: break-word;
+    max-width: 115px;
+    min-width: 115px;
+    white-space: normal;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+td.listen-button {
+    text-align: center;
+  }
+
+.listen-column {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.listen-column button {
+    margin: 0 auto;
+}
+
+#imagepad {
+    margin-right: 7px;
+}
+
+.heading-align {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#table-top {
+    border-top: 1px solid rgb(217 222 226);
+}
+
+.songstyle {
+    vertical-align: middle;
+}
+
+.trackartstyle {
+    vertical-align: middle;
+    text-align: center;
 }

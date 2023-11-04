@@ -14,8 +14,11 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: linear-gradient(to right, white, white, #f0f2f3, #d9dce1, #f0f2f3, white, white);
+    border-top: 1px solid rgb(217 222 226);
+    border-bottom: 1px solid rgb(217 222 226);
     margin-bottom: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .left-buttons {
@@ -31,7 +34,10 @@ h1 {
     background-color: white;
     margin-left: 5px;
     margin-bottom: 20px;
-    background-image: linear-gradient(to right, white, white, #f0f2f3, #f0f2f3, #f0f2f3, #d9dce1);
+    border-top: 1px solid rgb(217 222 226);
+    border-bottom: 1px solid rgb(217 222 226);
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .gsi-material-button {

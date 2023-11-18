@@ -14,15 +14,15 @@
 <body>
   <h1>Track Detail - <%= track.song %> by <%= track.artist %></h1>
   <ul class="list-unstyled">
-    <li><strong>Song:</strong> <%= track.song %></li>
-    <li><strong>Artist:</strong> <%= track.artist %></li>
-    <li><strong>Album:</strong> <%= track.album %></li>
-    <li><strong>Date Added:</strong> <%= track.dateAdded.toDateString() %></li>
-    <li><strong>Favorite:</strong> <%= track.favorite ? 'Yes' : 'No' %></li>
-    <li><strong>Streaming Source:</strong> <%= track.source.join(', ') %></li>
-    <li><strong>Discovery Source:</strong> <%= track.discovery.join(', ') %></li>
-    <li><strong>Link:</strong> <a href="<%= track.link %>"><%= track.link %></a></li>
-    <li><strong>Added By:</strong> <%= track.user ? track.user.username : 'Guest User' %></li>
+    <li><img id="imagepad" src="/images/icons/track.jpg" alt="Track Icon" width="20" height="20"><strong>Track:</strong> <%= track.song %></li>
+    <li><img id="imagepad" src="/images/icons/artist.png" alt="Artist Icon" width="20" height="20"><strong>Artist:</strong> <%= track.artist %></li>
+    <li><img id="imagepad" src="/images/icons/album.png" alt="Album Icon" width="20" height="20"><strong>Album:</strong> <%= track.album %></li>
+    <li><img id="imagepad" src="/images/icons/cal.png" alt="Calendar Icon" width="20" height="20"><strong>Date Added:</strong> <%= track.dateAdded.toDateString() %></li>
+    <li><img id="imagepad" src="/images/icons/favheading.png" alt="Favorite Heading Icon" width="24" height="24"><strong>Favorite:</strong> <%= track.favorite ? 'Yes' : 'No' %></li>
+    <li><img id="imagepad" src="/images/icons/source.png" alt="Source Icon" width="20" height="20"><strong>Streaming Source:</strong> <%= track.source.join(', ') %></li>
+    <li><img id="imagepad" src="/images/icons/disco.png" alt="Source Icon" width="17" height="17"><strong>Discovery Source:</strong> <%= track.discovery.join(', ') %></li>
+    <li><img img id="imagepad" src="/images/icons/headphones.png" alt="Headphones Icon" width="18" height="18"><strong>Link:</strong> <a href="<%= track.link %>"><%= track.link %></a></li>
+    <li><img id="imagepad" src="/images/icons/addedby.png" alt="Added By Icon" width="20" height="20"><strong>Added By:</strong> <%= track.user ? track.user.username : 'Guest User' %></li>
   </ul>
   <% if (user && (user.username === track.user.username || user.isAdmin)) { %>
     <a href="/add/editTrack/<%= track._id %>" class="btn btn-light">
@@ -30,12 +30,13 @@
     </a>
   <% } %>
   <% if (youtubeVideoId) { %>
-    <h3><strong>YouTube Video:</strong></h3>
+    <h3 class="youtube-video"><strong>YouTube Video:</strong></h3>
     <div class="youtube-video">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= youtubeVideoId %>" frameborder="0" allowfullscreen></iframe>
     </div>
   <% } %>
   
+  <div id="commentsSec">
   <% if (track.comments && track.comments.length > 0) { %>
     <h3 id="commenth3"><strong>Comments:</strong></h3>
     <ul class="comments-list">
@@ -43,12 +44,8 @@
         <li>
           <p><strong><%= comment.user ? comment.user : 'Guest User' %></strong> - Rating: <%= comment.rating %> - <%= comment.text %></p>
           <% if (user && (comment.user === user.username || user.isAdmin)) { %>
-            <a href="/trackView/track/<%= track._id %>/comment/<%= comment._id %>/edit" class="btn btn-light">
-              <i class="bi bi-house-door-fill"></i> Edit
-          </a>
-          <a href="/trackView/track/<%= track._id %>/comment/<%= comment._id %>/delete" class="btn btn-light">
-            <i class="bi bi-house-door-fill"></i> Delete
-        </a>
+            <a href="/trackView/track/<%= track._id %>/comment/<%= comment._id %>/edit" class="btn btn-light">Edit</a>
+          <a href="/trackView/track/<%= track._id %>/comment/<%= comment._id %>/delete" class="btn btn-secondary">Delete</a>
           <% } %>
         </li>
       <% }); %>
@@ -68,10 +65,11 @@
       </select><br>
       <label for="text" class="comments-list"><strong>Comment:</strong></label>
       <textarea name="text" required class="comments-list"></textarea><br>
-      <input type="submit" value="Add Comment">
+      <input type="submit"class="btn btn-secondary" value="Add Comment">
     </form>
   <% } %>
-  
+</div>
+
   <a href="/trackView/all" class="btn btn-light" id="bottombuttons">Back to All Tracks</a>
   <a href="/" class="btn btn-primary" id="bottombuttons">Back to Home</a>
 </body>

@@ -12,7 +12,6 @@ h1 {
 
 h3 {
     font-size: 40px;
-    background-color: white;
     margin-top: 50px;
 }
 
@@ -25,14 +24,38 @@ h3 {
 }
 
 .comments-list {
-    background-color: white;
     font-size: 20px;
+    width: 80%;
+    margin-left: 35px;
+    background-color: #ffffff;
+    color: black;
+    border-color: #ccc;
+    border-radius: 10px;
+    padding-bottom: 8px;
 }
 
 #commenth3 {
-    margin-top: 40px;
+    margin-top: 5px;
 }
 
 #bottombuttons {
     margin-top: 25px;
+}
+
+#imagepad {
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+#commentsSec {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 40%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.youtube-video {
+    margin-left: 10px;
 }

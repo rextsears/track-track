@@ -13,7 +13,7 @@
   <div class="container">
     <div class="row mt-5">
       <div class="col-md-6 offset-md-3 bg-white p-5 rounded shadow">
-  <h1 class="mb-4 text-center">Edit Track</h1>
+  <h1 class="mb-4 text-center"><img id="imagepad" src="/images/icons/edithead.png" alt="Edit Heading Icon" width="30" height="30">Edit Track</h1>
   <form action="/add/editTrack/<%= track._id %>" method="POST">
     <label for="song"><img id="imagepad" src="/images/icons/track.jpg" alt="Track Icon" width="20" height="20">Track:</label>
     <input type="text" name="song" class="form-control" id="narFieldz" value="<%= track.song %>" required><br>

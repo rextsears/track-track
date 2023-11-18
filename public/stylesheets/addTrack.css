@@ -149,6 +149,7 @@ form input[type="submit"] {
     margin-left: auto;
     margin-right: auto;
     width: auto;
+    font-weight: 300;
 }
 
 #imagepad {

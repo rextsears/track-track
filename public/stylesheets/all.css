@@ -205,9 +205,17 @@ td.listen-button {
 
 .songstyle {
     vertical-align: middle;
+    text-decoration: none;
+    color: #000;
 }
 
 .trackartstyle {
     vertical-align: middle;
     text-align: center;
 }
+
+.no-link-style {
+    text-decoration: none;
+    color: inherit; /* Optionally, you can set the link color to inherit the parent color */
+  }
+  

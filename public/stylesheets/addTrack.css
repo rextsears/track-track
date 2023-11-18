@@ -16,7 +16,7 @@ h1 {
 form {
     font-family: 'Titillium Web', sans-serif;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
     max-width: 500px;
     background-color: #ffffff;
     padding: 30px;
@@ -46,4 +46,112 @@ form input[type="submit"] {
     margin-left: auto;
     margin-right: auto;
     font-family: 'Titillium Web', sans-serif;
+}
+
+#deleteModalButton {
+    border: none;
+    box-shadow: none;
+}
+
+#sourceDropdown {
+    width: 80%;
+    margin-left: 15px;
+    background-color: #ffffff;
+    color: black;
+    border-color: #ccc;
+}
+
+#favoriteArea {
+    margin-bottom: 25px;
+}
+
+#addNewSrc {
+    margin-left: 2px;
+    border: 1px solid #ccc;
+}
+
+#sSrcBttns {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+}
+
+#editSrcBut {
+    border: 1px solid #ccc;
+    margin-left: 5px;
+}
+
+#footBttns {
+    display: flex;
+    flex-direction: row;
+}
+
+#narFieldz {
+    font-family: 'Titillium Web', sans-serif;
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#lnkField {
+    font-family: 'Titillium Web', sans-serif;
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+#discSect {
+    padding-top: 20px;
+}
+
+#sSrcSect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#srcLabel {
+    align-self: center;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#linkLab {
+    align-self: center;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+#srcNote {
+    font-size: 12px;
+    font-weight: 200;
+    padding-bottom: 7px;
+    text-align: center;
+}
+
+#loggeduser {
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+#imagepad {
+    margin-right: 10px;
+    margin-bottom: 2px;
 }

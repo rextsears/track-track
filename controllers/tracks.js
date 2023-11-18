@@ -110,6 +110,7 @@ async function editTrack(req, res) {
 async function deleteTrack(req, res) {
   const trackId = req.params.id;
   try {
+    // Retrieve the track to be deleted from the database
     const track = await Tracks.findById(trackId);
 
     if (!track) {
@@ -117,17 +118,17 @@ async function deleteTrack(req, res) {
       throw new Error('Track not found');
     }
 
-    // Check track ownership again (just to be safe)
+    // Check if the logged-in user is authorized to delete the track
     if (track.user.toString() !== req.user._id.toString()) {
       console.log('Unauthorized');
       throw new Error('Unauthorized');
     }
 
+    // Delete the track from the database
     await Tracks.findByIdAndDelete(trackId);
-    
-    // Render a specific page after deletion (e.g., track listing page)
-    const allTracks = await Tracks.find();
-    res.render('trackView/all', { tracks: allTracks });
+
+    // Redirect the user to their "My Tracks" page
+    res.redirect('/trackView/userTracks');
   } catch (error) {
     console.log('Error:', error);
     res.render('error', { message: 'Error deleting track', error });

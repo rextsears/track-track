@@ -30,7 +30,7 @@ router.get('/add/editTrack/:id', trackController.renderEditTrackPage);
 //router.post('/add/editTrack/:id', trackController.editTrack);
 
 // Route for deleting a track from the database
-//router.post('/tracks/delete/:id', trackController.deleteTrack);
+router.post('/tracks/delete/:id', trackController.deleteTrack);
 
 // Route for display of all tracks alphabetically by Song and render on the "All Tracks by Song A-Z" page
 router.get('/trackView/bySong', trackController.displaySong);
